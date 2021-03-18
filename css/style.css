@@ -1,15 +1,9 @@
     header {
-        max-width: auto;
-        min-height: 80px;
-        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        margin: 0;
         /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
-    }
-    
-    footer {
-        max-width: auto;
-        min-height: auto;
-        margin: 0 auto;
     }
     
     body {
@@ -17,7 +11,14 @@
         height: 100%;
         margin: auto;
         /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(135deg, #063554 0%, #085376 50%, #074a6b 51%, #0b77a5 100%);
+        background: linear-gradient(135deg, #1e3046 0%, #133342 30%, #0b2d3d 31%, #032838 70%);
+    }
+    
+    footer {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        background: linear-gradient(135deg, #0e0e0e 100%, #395177 22%, #d8e0de 0%, #829d98 0%, #8ea6a2 0%, #99afab 0%, #aebfbc 0%);
     }
     
     #logo {
@@ -36,4 +37,18 @@
     .lista {
         list-style: none;
         padding: 0;
+    }
+    
+    @media all and (max-width: 767px) {
+        .carousel-sm-responsive {
+            object-fit: fill;
+            height: auto;
+        }
+    }
+    
+    @media all and (min-width:768px) and (max-width: 1020px) {
+        .carousel-md-responsive {
+            object-fit: fill;
+            height: auto;
+        }
     }
