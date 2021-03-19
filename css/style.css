@@ -1,54 +1,74 @@
-    header {
-        width: 100%;
+body {
+    padding: 0;
+    margin: 0;
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #1e3046 0%, #133342 30%, #0b2d3d 31%, #032838 70%);
+}
+
+header {
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+header .contenedor {
+    display: flex;
+}
+
+main {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    width: 100%;
+    padding: 25px 0;
+    background: linear-gradient(135deg, #0e0e0e 100%, #395177 22%, #d8e0de 0%, #829d98 0%, #8ea6a2 0%, #99afab 0%, #aebfbc 0%);
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+}
+
+@media all and (max-width: 767px) {
+    .carousel-sm-responsive {
+        object-fit: fill;
         height: auto;
-        margin: 0;
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
     }
-    
-    body {
-        width: 100%;
-        height: 100%;
+    .logo {
+        max-width: 200px;
+        max-height: 200px;
+        padding: auto;
         margin: auto;
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(135deg, #1e3046 0%, #133342 30%, #0b2d3d 31%, #032838 70%);
     }
-    
-    footer {
-        width: 100%;
-        height: auto;
-        margin: 0;
-        background: linear-gradient(135deg, #0e0e0e 100%, #395177 22%, #d8e0de 0%, #829d98 0%, #8ea6a2 0%, #99afab 0%, #aebfbc 0%);
-    }
-    
-    #logo {
-        width: 250px;
-        margin-top: 0;
-        margin-left: 0;
-        float: unset;
-    }
-    
-    #logoFooter {
+    .logoFooter {
         width: 25%;
-        margin: 0;
-        float: unset;
+        margin: auto;
     }
-    
-    .lista {
-        list-style: none;
-        padding: 0;
+}
+
+@media all and (min-width: 768px) and (max-width: 1800px) {
+    .carousel-md-responsive {
+        object-fit: fill;
+        height: auto;
     }
-    
-    @media all and (max-width: 767px) {
-        .carousel-sm-responsive {
-            object-fit: fill;
-            height: auto;
-        }
+    .logo {
+        max-width: 200px;
+        max-height: 200px;
+        padding: auto;
+        margin: auto;
     }
-    
-    @media all and (min-width:768px) and (max-width: 1020px) {
-        .carousel-md-responsive {
-            object-fit: fill;
-            height: auto;
-        }
+    .logoFooter {
+        width: 70%;
+        margin: auto;
     }
+}
