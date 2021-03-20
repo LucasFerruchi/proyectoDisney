@@ -8,7 +8,6 @@ header {
     width: 100%;
     padding: 20px 0;
     margin: 0;
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
 }
 
@@ -26,7 +25,6 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #1e3046 0%, #133342 30%, #0b2d3d 31%, #032838 70%);
 }
 
@@ -46,6 +44,82 @@ footer {
 .lista {
     list-style: none;
     padding: 0;
+}
+
+
+/* --Tira de peliculas-- */
+
+.filaPeliculas {
+    margin-bottom: 70px;
+}
+
+.filaPeliculas .contenedorPrincipal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+/* --Configuracion de botones lateraless-- */
+
+.filaPeliculas .contenedorPrincipal .flechaIzq,
+.filaPeliculas .contenedorPrincipal .flechaDer {
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.filaPeliculas .contenedorPrincipal .flechaIzq:hover,
+.filaPeliculas .contenedorPrincipal .flechaDer:hover {
+    background: rgba(0, 0, 0, .9);
+}
+
+.filaPeliculas .contenedorPrincipal .flechaIzq {
+    left: 0;
+}
+
+.filaPeliculas .contenedorPrincipal .flechaDer {
+    right: 0;
+}
+
+
+/*--Contenedor secundario, tira de peliculas--*/
+
+.filaPeliculas .contenedorSecundario {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.filaPeliculas .contenedorSecundario .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.filaPeliculas .contenedorSecundario .carousel .pelicula {
+    min-width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+.filaPeliculas .contenedorSecundario .carousel .pelicula.hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.filaPeliculas .contenedorSecundario .carousel .pelicula img {
+    width: 100%;
+    vertical-align: top;
 }
 
 @media all and (max-width: 767px) {
