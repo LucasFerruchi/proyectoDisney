@@ -50,10 +50,11 @@ footer {
 /* --Tira de peliculas-- */
 
 .filaPeliculas {
-    margin-bottom: 70px;
+    margin: 15px 0;
 }
 
 .filaPeliculas .contenedorPrincipal {
+    margin: 10px 0;
     display: flex;
     align-items: center;
     position: relative;
@@ -66,13 +67,13 @@ footer {
 .filaPeliculas .contenedorPrincipal .flechaDer {
     position: absolute;
     border: none;
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
     font-size: 40px;
     height: 50%;
     top: calc(50% - 25%);
     line-height: 40px;
     width: 50px;
-    color: #fff;
+    color: rgba(72, 138, 139, 0.9);
     cursor: pointer;
     z-index: 500;
     transition: .2s ease all;
@@ -80,7 +81,8 @@ footer {
 
 .filaPeliculas .contenedorPrincipal .flechaIzq:hover,
 .filaPeliculas .contenedorPrincipal .flechaDer:hover {
-    background: rgba(0, 0, 0, .9);
+    color: rgba(182, 240, 208, 0.9);
+    background: 0;
 }
 
 .filaPeliculas .contenedorPrincipal .flechaIzq {
@@ -96,7 +98,7 @@ footer {
 
 .filaPeliculas .contenedorSecundario {
     width: 100%;
-    padding: 20px 0;
+    padding: 2px 0;
     overflow: hidden;
     scroll-behavior: smooth;
 }
@@ -107,7 +109,7 @@ footer {
 }
 
 .filaPeliculas .contenedorSecundario .carousel .pelicula {
-    min-width: 20%;
+    min-width: 30%;
     transition: .3s ease all;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
 }
@@ -121,6 +123,9 @@ footer {
     width: 100%;
     vertical-align: top;
 }
+
+
+/* --Media Queries-- */
 
 @media all and (max-width: 767px) {
     .carousel-sm-responsive {

@@ -12,10 +12,10 @@ flechaDer.addEventListener('click', () => {
     fila.scrollLeft += fila.offsetWidth;
 
     const indicadorActivo = document.querySelector('.indicadores .activo');
-    if (indicadorActivo.nextSibling) {
-        indicadorActivo.nextSibling.classList.add('activo');
-        indicadorActivo.classList.remove('activo');
-    }
+    // if (indicadorActivo.nextSibling) {
+    // indicadorActivo.nextSibling.classList.add('activo');
+    // indicadorActivo.classList.remove('activo');
+    // }
 });
 
 // Flecha Izquierda
@@ -24,8 +24,8 @@ flechaIzq.addEventListener('click', () => {
     fila.scrollLeft -= fila.offsetWidth;
 
     const indicadorActivo = document.querySelector('.indicadores .activo');
-    if (indicadorActivo.previousSibling) {
-        indicadorActivo.previousSibling.classList.add('activo');
-        indicadorActivo.classList.remove('activo');
-    }
+    // if (indicadorActivo.previousSibling) {
+    // indicadorActivo.previousSibling.classList.add('activo');
+    // indicadorActivo.classList.remove('activo');
+    // }
 });
