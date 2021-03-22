@@ -1,37 +1,164 @@
-    header {
-        max-width: auto;
-        min-height: 80px;
-        margin: 0 auto;
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+    background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
+}
+
+.contenedorHeader {
+    width: 90%;
+}
+
+header .contenedorHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #1e3046 0%, #133342 30%, #0b2d3d 31%, #032838 70%);
+}
+
+main {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    padding: 25px 0;
+    background: linear-gradient(135deg, #0e0e0e 100%, #395177 22%, #d8e0de 0%, #829d98 0%, #8ea6a2 0%, #99afab 0%, #aebfbc 0%);
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* --Tira de peliculas-- */
+
+.filaPeliculas {
+    margin-bottom: 70px;
+}
+
+.filaPeliculas .contenedorPrincipal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+/* --Configuracion de botones lateraless-- */
+
+.filaPeliculas .contenedorPrincipal .flechaIzq,
+.filaPeliculas .contenedorPrincipal .flechaDer {
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.filaPeliculas .contenedorPrincipal .flechaIzq:hover,
+.filaPeliculas .contenedorPrincipal .flechaDer:hover {
+    background: rgba(0, 0, 0, .9);
+}
+
+.filaPeliculas .contenedorPrincipal .flechaIzq {
+    left: 0;
+}
+
+.filaPeliculas .contenedorPrincipal .flechaDer {
+    right: 0;
+}
+
+
+/*--Contenedor secundario, tira de peliculas--*/
+
+.filaPeliculas .contenedorSecundario {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.filaPeliculas .contenedorSecundario .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.filaPeliculas .contenedorSecundario .carousel .pelicula {
+    min-width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+.filaPeliculas .contenedorSecundario .carousel .pelicula.hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.filaPeliculas .contenedorSecundario .carousel .pelicula img {
+    width: 100%;
+    vertical-align: top;
+}
+
+@media all and (max-width: 767px) {
+    .carousel-sm-responsive {
+        object-fit: fill;
+        height: auto;
     }
-    
-    footer {
-        max-width: auto;
-        min-height: auto;
-        margin: 0 auto;
-    }
-    
-    body {
-        width: 100%;
-        height: 100%;
+    .logo {
+        max-width: 200px;
+        max-height: 200px;
+        padding: auto;
         margin: auto;
-        /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(135deg, #063554 0%, #085376 50%, #074a6b 51%, #0b77a5 100%);
     }
-    
-    #logo {
-        width: 250px;
-        margin-top: 0;
-        margin-left: 0;
-        float: unset;
-    }
-    
-    #logoFooter {
+    .logoFooter {
         width: 25%;
-        margin: 0;
-        float: unset;
+        margin: auto;
     }
+    #sadmickey {
+        max-width: 60%;
+        align-self: center;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1800px) {
+    .carousel-md-responsive {
+        object-fit: fill;
+        height: auto;
+    }
+    .logo {
+        max-width: 200px;
+        max-height: 200px;
+        padding: auto;
+        margin: auto;
+    }
+    .logoFooter {
+        width: 70%;
+        margin: auto;
+    }
+<<<<<<< HEAD
     
     .lista {
         list-style: none;
@@ -41,3 +168,6 @@
     .descripcion {
         color: rgb(248, 248, 248);
     }
+=======
+}
+>>>>>>> f0e1793b68d11d9694f46630dea728ecd6394b3b
