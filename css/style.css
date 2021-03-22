@@ -6,20 +6,62 @@
 
 header {
     width: 100%;
-    padding: 20px 0;
+    padding: 0;
     margin: 0;
     background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
 }
 
-.contenedorHeader {
-    width: 90%;
+header .fondoNav {
+    background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
 }
 
-header .contenedorHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header .boton {
+    background: transparent;
+    border-radius: 12px;
+    color: #fafafa;
+    border: 2px solid #a9c4ce;
+    font-size: 17px;
+    padding: 3px;
+    text-decoration: none;
 }
+
+header .boton:hover {
+    background-color: rgba(131, 106, 106, 0.4);
+    color: white;
+}
+
+header .boton:active {
+    box-shadow: 1px -2px 1px #cdd9e9;
+    position: relative;
+    border-bottom: 0px;
+}
+
+
+/* .contenedorHeader { */
+
+
+/* width: 90%; */
+
+
+/* } */
+
+
+/*  */
+
+
+/* header .contenedorHeader { */
+
+
+/* display: flex; */
+
+
+/* justify-content: space-between; */
+
+
+/* align-items: center; */
+
+
+/* } */
 
 body {
     padding: 0;
