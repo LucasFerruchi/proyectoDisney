@@ -170,9 +170,12 @@ footer {
 /* --Media Queries-- */
 
 @media all and (max-width: 767px) {
-    .carousel-sm-responsive {
-        object-fit: fill;
-        height: auto;
+    /* .carousel-sm-responsive { */
+    /* object-fit: fill; */
+    /* height: auto; */
+    /* } */
+    header .navbarSmall {
+        display: inline-block;
     }
     .logo {
         max-width: 200px;
@@ -191,10 +194,10 @@ footer {
 }
 
 @media all and (min-width: 768px) and (max-width: 1800px) {
-    .carousel-md-responsive {
-        object-fit: fill;
-        height: auto;
-    }
+    /* .carousel-md-responsive { */
+    /* object-fit: fill; */
+    /* height: auto; */
+    /* } */
     .logo {
         max-width: 200px;
         max-height: 200px;
