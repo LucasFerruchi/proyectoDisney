@@ -19,56 +19,95 @@
     <script src="https://kit.fontawesome.com/6493cd26ff.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="img/Logo/LogoDisneyIcon.png" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/2ec4b6d9c2.js " crossorigin="anonymous "></script>
     <title>Disney+</title>
 </head>
 
 <body>
     <header>
-        <div class="contenedor">
-            <article class="logo ml-1">
-                <a href="index.html"><img src="img/Logo/PngItem_Disney.png" class="w-75" alt="Logo DisneyPlus" /></a>
-            </article>
-            <nav class="navbar navbar-expand-md navbar-dark">
-                <section>
-                    <button class="navbar-toggler mb-3 mr-5" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active mx-2">
-                                <a class="nav-link" href="index.html">Inicio</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fondoNav">
+            <div class="container navbarSmall">
+                <div class="logo mx-5">
+                    <a href="index.html"><img src="img/Logo/PngItem_Disney.png" class="w-100" alt="Logo DisneyPlus"></a>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="navbar-toggler boton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link m-md-2" href="index.html">
+                                    <button class="boton nav-link active" type="button" aria-current="page"><i class="fas fa-home mx-2"></i>Inicio</button>
+                                </a>
                             </li>
-                            <li class="nav-item active mx-2">
-                                <a class="nav-link mx-2" href="#"><span
-                      class="badge badge-success"
-                      data-toggle="modal"
-                      data-target="#modalSubs"
-                      >Suscripción</span
-                    ></a
-                  >
-                </li>
-                <li class="nav-item active mx-2">
-                  <a class="nav-link mx-2" href="#"
-                    ><span
-                      class="badge badge-success"
-                      data-toggle="modal"
-                      data-target="#modalSubs"
-                      >Login</span
-                    ></a
-                  >
-                </li>
-                <li class="nav-item mx-2">
-                  <a class="nav-link" href="contacto.html">Contacto</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                            <li class="nav-item dropdown m-md-2">
+                                <a class="nav-link dropdown-toggle my-2 boton" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Login</a></li>
+                                    <li><a class="dropdown-item" href="#">Registro</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Contacto</a></li>
+                                </ul>
                             </li>
                         </ul>
+                        <form class="d-flex justify-content-between m-lg-2 m-md-2">
+                            <input class="form-control me-2 boton" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn- text-light boton" type="submit"><i class="fas fa-check"></i></button>
+                        </form>
                     </div>
-                </section>
-            </nav>
-        </div>
+                </div>
+        </nav>
+
+        <!-- <div class="contenedorHeader"> -->
+        <!-- <article class="logo ml-1"> -->
+        <!-- <a href="index.html"><img src="img/Logo/PngItem_Disney.png" class="w-75" alt="Logo DisneyPlus" /></a> -->
+        <!-- </article> -->
+        <!-- <nav class="navbar navbar-expand-md navbar-dark"> -->
+        <!-- <section> -->
+        <!-- <button class="navbar-toggler mb-3 mr-5" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
+        <!-- <span class="navbar-toggler-icon"></span></button> -->
+        <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+        <!-- <ul class="navbar-nav ml-auto"> -->
+        <!-- <li class="nav-item active mx-2"> -->
+        <!-- <a class="nav-link" href="index.html">Inicio</a> -->
+        <!-- </li> -->
+        <!-- <li class="nav-item active mx-2"> -->
+        <!-- <a class="nav-link mx-2" href="#"><span -->
+        <!-- class="badge badge-success" -->
+        <!-- data-toggle="modal" -->
+        <!-- data-target="#modalSubs" -->
+        <!-- >Suscripción</span -->
+        <!-- ></a -->
+        <!-- > -->
+        <!-- </li> -->
+        <!-- <li class="nav-item active mx-2"> -->
+        <!-- <a class="nav-link mx-2" href="#" -->
+        <!-- ><span -->
+        <!-- class="badge badge-success" -->
+        <!-- data-toggle="modal" -->
+        <!-- data-target="#modalSubs" -->
+        <!-- >Login</span -->
+        <!-- ></a -->
+        <!-- > -->
+        <!-- </li> -->
+        <!-- <li class="nav-item mx-2"> -->
+        <!-- <a class="nav-link" href="contacto.html">Contacto</a> -->
+        <!-- </li> -->
+        <!-- <li class="nav-item mx-2"> -->
+        <!-- <a class="nav-link" href="nosotros.html">Nosotros</a> -->
+        <!-- </li> -->
+        <!-- </ul> -->
+        <!-- </div> -->
+        <!-- </section> -->
+        <!-- </div> -->
+
     </header>
 
     <main>
@@ -114,71 +153,496 @@
             </div>
         </section>
 
-        <section class="container mt-5 text-light">
-            <h3 class="lead">Novedades en Disney+</h3>
-            <hr />
-        </section>
-        <section class="container mt-5 text-light">
-            <h3 class="lead">Tendencias</h3>
-            <hr />
-        </section>
-        <section class="container mt-5 text-light">
-            <h3 class="lead">Series originales</h3>
-            <hr />
-        </section>
-        <section class="container mt-5 text-light">
-            <h3 class="lead">Accion y aventura</h3>
-            <hr />
-        </section>
-        <section class="container mt-5 text-light">
-            <h3 class="lead">Música y baile</h3>
-            <hr />
-        </section>
-        <section class="container mt-5 text-light">
-            <h3 class="lead">Películas animadas</h3>
-            <hr />
-        </section>
-    </main>
-    <footer class="bg-dark text-light d-flex justify-content-around text-center">
-        <article class="container row">
-            <div class="col-sm-12 col-md-4 text-light text-center my-5">
-                <ul class="lista">
-                    <li>
-                        <a href="https://disneylatino.com/" target="blank" class="text-light">Página oficial</a
-              >
-            </li>
-            <li>
-              <a href="error404.html" target="blank" class="text-light"
-                >Privacidad</a
-              >
-            </li>
-            <li>
-              <a href="error404.html" target="blank" class="text-light"
-                >Legales</a
-              >
-            </li>
-          </ul>
+        <div id="PeliculasRecomendadas" class="filaPeliculas contenedor">
+            <hr class="text-light">
+            <div class="titulo">
+                <h2 class="lead text-light m-5">Recomendaciones</h2>
+                <div class="indicadores"></div>
+            </div>
+
+            <div class="contenedorPrincipal">
+                <button type="button" id="flechaIzq" class="flechaIzq"><i class="fas fa-angle-left"></i></button>
+
+                <div class="contenedorSecundario">
+                    <div class="carousel">
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0061.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0062.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0063.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0064.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0065.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0066.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0067.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0068.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0069.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0070.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0071.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0072.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0073.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0074.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/Recomendadas/IMG_0075.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="flechaDer" class="flechaDer"><i class="fas fa-angle-right"></i></button>
+            </div>
         </div>
 
-        <div class="col-sm-12 col-md-4 text-center">
-          <a href="index.html"
-            ><img
-              src="img/Logo/PngItem_291927.png "
-              class="my-3 logoFooter"
-              alt="Logo DisneyPlus"
-          /></a>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <hr class="text-light">
+            <div class="#">
+                <h3 class="lead text-light m-5">Películas Recomendadas</h3>
+                <div class="#"></div>
             </div>
-            <div class="col-sm-12 col-md-4 mb-4 text-light text-center my-5">
-                <a href="error404.html" target="blank"><i class="fab fa-instagram fa-2x mx-2 text-light"></i
-          ></a>
-                <a href="https://www.facebook.com/Disney" target="blank "><i class="fab fa-facebook-square fa-2x mx-2 text-light"></i
-          ></a>
-                <a href="error404.html" target="blank"><i class="fab fa-twitter fa-2x mx-2 text-light"></i
-          ></a>
-                <br />
-                <small>&copy;Todos los derechos reservados</small>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/Recomendadas/IMG_0075.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0076.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0077.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item active">
+                    <img src="img/Recomendadas/IMG_0078.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0079.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0081.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item active">
+                    <img src="img/Recomendadas/IMG_0082.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0083.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0084.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item active">
+                    <img src="img/Recomendadas/IMG_0085.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0086.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0087.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item active">
+                    <img src="img/Recomendadas/IMG_0088.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0089.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Recomendadas/IMG_0090.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
-        </article>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="filaPeliculas contenedor">
+            <hr class="text-light">
+            <div class="titulo">
+                <h3 class="lead text-light m-5">Accion y aventura</h3>
+                <div class="indicadores"></div>
+            </div>
+
+            <div class="contenedorPrincipal">
+                <button type="button" id="flechaIzq" class="flechaIzq"><i class="fas fa-angle-left"></i></button>
+
+                <div class="contenedorSecundario">
+                    <div class="carousel">
+                        <div class="pelicula">
+                            <a href="#"><img src="img/AccionAventura/01.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/AccionAventura/02.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/AccionAventura/03.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/AccionAventura/04.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="img/AccionAventura/05.jpg" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="flechaDer" class="flechaDer"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div id="Favoritas" class="filaPeliculas contenedor">
+            <hr class="text-light">
+            <div class="titulo">
+                <h3 class="lead text-light m-5">Tus favoritas</h3>
+                <div class="indicadores"></div>
+            </div>
+
+            <div class="contenedorPrincipal">
+                <button type="button" id="flechaIzq" class="flechaIzq"><i class="fas fa-angle-left"></i></button>
+
+                <div class="contenedorSecundario">
+                    <div class="carousel">
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="flechaDer" class="flechaDer"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="filaPeliculas contenedor">
+            <hr class="text-light">
+            <div class="titulo">
+                <h3 class="lead text-light m-5">Series originales</h3>
+                <div class="indicadores"></div>
+            </div>
+
+            <div class="contenedorPrincipal">
+                <button type="button" id="flechaIzq" class="flechaIzq"><i class="fas fa-angle-left"></i></button>
+
+                <div class="contenedorSecundario">
+                    <div class="carousel">
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="flechaDer" class="flechaDer"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="filaPeliculas contenedor">
+            <hr class="text-light">
+            <div class="titulo">
+                <h3 class="lead text-light m-5">Cortos</h3>
+                <div class="indicadores"></div>
+            </div>
+
+            <div class="contenedorPrincipal">
+                <button type="button" id="flechaIzq" class="flechaIzq"><i class="fas fa-angle-left"></i></button>
+
+                <div class="contenedorSecundario">
+                    <div class="carousel">
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="flechaDer" class="flechaDer"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div class="filaPeliculas contenedor">
+            <hr class="text-light">
+            <div class="titulo">
+                <h3 class="lead text-light m-5">Musica y baile</h3>
+                <div class="indicadores"></div>
+            </div>
+
+            <div class="contenedorPrincipal">
+                <button type="button" id="flechaIzq" class="flechaIzq"><i class="fas fa-angle-left"></i></button>
+
+                <div class="contenedorSecundario">
+                    <div class="carousel">
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                        <div class="pelicula">
+                            <a href="#"><img src="#" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="flechaDer" class="flechaDer"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+
+    </main>
+    <footer class="text-light py-2">
+        <section class="container d-flex justify-content-between">
+            <article class="row">
+                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2">
+                    <ul class="lista">
+                        <li>
+                            <a href="https://disneylatino.com/" target="blank" class="text-light">Página oficial</a
+                >
+              </li>
+              <li>
+                <a href="error404.html" target="blank" class="text-light"
+                  >Privacidad</a
+                >
+              </li>
+              <li>
+                <a href="error404.html" target="blank" class="text-light"
+                  >Legales</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-sm-12 col-md-4 text-center">
+            <a href="index.html"
+              ><img
+                src="img/Logo/PngItem_291927.png "
+                class="my-3 logoFooter"
+                alt="Logo DisneyPlus"
+            /></a>
+                </div>
+                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2">
+                    <a href="error404.html" target="blank"><i class="fab fa-instagram fa-2x mx-2 text-light"></i
+            ></a>
+                    <a href="https://www.facebook.com/Disney" target="blank "><i class="fab fa-facebook-square fa-2x mx-2 text-light"></i
+            ></a>
+                    <a href="error404.html" target="blank"><i class="fab fa-twitter fa-2x mx-2 text-light"></i
+            ></a>
+                    <br />
+                    <small>&copy;Todos los derechos reservados</small>
+                </div>
+            </article>
+        </section>
     </footer>
     <!-- Probando las posibles soluciones bootstrap v5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
@@ -190,6 +654,7 @@
     <!-- <script src="js/jquery-3.5.1.min.js "></script> -->
     <!-- <script src="js/popper.min.js "></script> -->
     <!-- <script src="js/bootstrap.min.js "></script> -->
+    <script src="js/filaPeliculas.js"></script>
 </body>
 
 </html>
