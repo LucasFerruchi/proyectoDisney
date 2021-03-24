@@ -11,6 +11,9 @@
     <script src="https://kit.fontawesome.com/6493cd26ff.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="img/Logo/LogoDisneyIcon.png" type="image/x-icon" />
+    <!-- Agregar el link de sweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
+
     <title>Disney+</title>
 </head>
 
@@ -59,7 +62,7 @@
         <section class="row align-items-center my-4">
             <div class="lead text-start text-light col-9">TABLA DE PELICULAS</div>
             <div class="text-end col-3">
-                <button type="button" class="btn btn-outline-light ms-auto" data-bs-toggle="modal" data-bs-target="#modalPeliculas">Agregar</button>
+                <button type="button" class="btn btn-outline-light ms-auto" id="btnAgregar">Agregar</button>
             </div>
         </section>
         <!-- Agregamos Tabla -->
@@ -107,7 +110,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario -->
-                    <form id="formPeli">
+                    <form id="formPeli" onsubmit="agregarPelicula(event)">
                         <!-- Codigo -->
                         <div class="mb-3">
                             <label for="form-label">Código</label>
@@ -115,8 +118,8 @@
                         </div>
                         <!-- nombPeli -->
                         <div class="mb-3">
-                            <label for="form-label">Nombre de Película:</label>
-                            <input type="text" class="form-control" id="nombrPeli" placeholder="Ingrese el nombre para la película">
+                            <label for="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombPeli" placeholder="Nombre de película.">
                         </div>
                         <!-- categoria -->
                         <div class="mb-3">
@@ -136,14 +139,14 @@
                         <!-- publicada -->
                         <div class="mb-3">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="checkPublicada">
+                                <input type="checkbox" class="form-check-input" id="publicada">
                                 <label class="form-check-label">Desea publicar la película</label>
                             </div>
                         </div>
                         <!-- destacada -->
                         <div class="mb-3">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="checkDestacada">
+                                <input type="checkbox" class="form-check-input" id="destacada">
                                 <label class="form-check-label">Desea destacar la película</label>
                             </div>
                         </div>
