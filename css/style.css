@@ -83,9 +83,9 @@ footer {
     background: linear-gradient(135deg, #0e0e0e 100%, #395177 22%, #d8e0de 0%, #829d98 0%, #8ea6a2 0%, #99afab 0%, #aebfbc 0%);
 }
 
-.lista {
-    list-style: none;
-    padding: 0;
+.lista li {
+    list-style-type: none;
+    text-decoration: none;
 }
 
 
@@ -175,7 +175,7 @@ footer {
     /* height: auto; */
     /* } */
     header .navbarSmall {
-        display: inline-block;
+        flex-direction: column;
     }
     .logo {
         max-width: 200px;
@@ -207,10 +207,6 @@ footer {
     .logoFooter {
         width: 70%;
         margin: auto;
-    }
-    .lista {
-        list-style: none;
-        padding: 0;
     }
     .descripcion {
         color: rgb(248, 248, 248);
