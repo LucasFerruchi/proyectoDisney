@@ -167,6 +167,17 @@ footer {
 }
 
 
+/* Fondo Modal */
+
+.fondoModal {
+    background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
+}
+
+.fondoBoton {
+    background: linear-gradient(135deg, #1e3046 0%, #133342 30%, #0b2d3d 31%, #032838 70%);
+}
+
+
 /* --Media Queries-- */
 
 @media all and (max-width: 767px) {

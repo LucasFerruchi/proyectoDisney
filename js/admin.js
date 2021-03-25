@@ -18,12 +18,10 @@ window.agregarPelicula = function(event) {
     let categoria = document.getElementById("categoria").value;
     let descripcion = document.getElementById("descripcion").value;
     let imagen = document.getElementById("imagen").value;
-    let publicada = document.getElementById("publicada").value;
-    let destacada = document.getElementById("destacada").value;
+    let publicada = document.getElementById("publicada").checked;
+    let destacada = document.getElementById("destacada").checked;
 
     let nuevaPelicula = new Pelis(codigo, nombrePeli, categoria, descripcion, imagen, publicada, destacada);
-    //console.log(nuevaPelicula.publicada);
-    //console.log(nuevaPelicula.destacada);
     listaPeliculas.push(nuevaPelicula);
     //console.log(listaPeliculas);
 
@@ -61,18 +59,39 @@ function dibujarTabla(_listaPeliculas) {
     tabla.innerHTML = "";
     let filas;
     for (let i in _listaPeliculas) {
-        filas = `<tr>
+        if (!_listaPeliculas[i].destacada) {
+            filas = `<tr>
         <td>${_listaPeliculas[i].codigo}</td>
         <td>${_listaPeliculas[i].nombre}</td>
         <td>${_listaPeliculas[i].categoria}</td>
+        <td>${_listaPeliculas[i].descripcion}</td>
         <td>${_listaPeliculas[i].publicada}</td>
-        <td>${_listaPeliculas[i].destacada}</td>
         <td>
-            <button class="btn btn-primary"><i class="far fa-star"></i></button>
-            <button class="btn btn-warning"><i class="fas fa-marker"></i></button>
-            <button class="btn btn-danger"><i class="fas fa-trash-restore"></i></button>
+            <button class="btn btn-outline-warning"><i class="fas fa-star"></i></button>
+            <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+            <button class="btn btn-outline-danger"><i class="fas fa-trash-restore"></i></button>
         </td>
         </tr>`
+        } else {
+            {
+                filas = `<tr>
+            <td>${_listaPeliculas[i].codigo}</td>
+            <td>${_listaPeliculas[i].nombre}</td>
+            <td>${_listaPeliculas[i].categoria}</td>
+            <td>${_listaPeliculas[i].descripcion}</td>
+            
+            <td><div class="form-check">
+                <input type="checkbox" class="form-check-input" checked>
+            </div></td>
+            
+            <td>
+                <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
+                <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+                <button class="btn btn-outline-danger"><i class="fas fa-trash-restore"></i></button>
+            </td>
+            </tr>`
+            }
+        }
         tabla.innerHTML += filas;
     }
 }
