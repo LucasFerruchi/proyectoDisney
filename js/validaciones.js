@@ -1,7 +1,59 @@
 // VALIDACIONES DE LOGIN
 //Validacion de email
+// function valEmail(email) {
+// let expresion = /\w+@\w+\.[a-z]{2,}$/;
+// if (email.value.trim() != '' && expresion.test(email.value)) {
+// email.className = 'form-control is-valid';
+// return true;
+// } else {
+// email.className = 'form-control is-invalid';
+// return false;
+// }
+// }
+
+// Validacion de contraseña
+// function valContrasena(texto) {
+// if (texto.value.trim() != "" && texto.value.length >= 6) {
+// texto.className = 'form-control is-valid';
+// return true;
+// } else {
+// texto.className = 'form-control is-invalid';
+// return false;
+// }
+// }
+
+
+// VALIDACION DE FORMULARIO DE SUSCRIPCION
+
+
+//VALIDACIONES MODAL FORM SUSCRIPCION 
+//Validacion de nombre
+function valSuscrpNombre(input) {
+    console.log('funcion validar nombre');
+    if (input.value.trim() === "") {
+        input.className = 'form-control is-invalid';
+        return false;
+    } else {
+        input.className = 'form-control is-valid';
+        return true;
+    }
+}
+
+//Validacion de Apellido
+function valSuscrpApellido(input) {
+    console.log('funcion validar apellido');
+    if (input.value.trim() === "") {
+        input.className = 'form-control is-invalid';
+        return false;
+    } else {
+        input.className = 'form-control is-valid';
+        return true;
+    }
+}
+
+//Validacion de Email
 function valEmail(email) {
-    // console.log(email);emilsearias@gmail.com
+    console.log('funcion validar email');
     let expresion = /\w+@\w+\.[a-z]{2,}$/;
     if (email.value.trim() != '' && expresion.test(email.value)) {
         email.className = 'form-control is-valid';
@@ -12,22 +64,38 @@ function valEmail(email) {
     }
 }
 
-// Validacion de contraseña
-function valContrasena(texto) {
-    if (texto.value.trim() != "" && texto.value.length >= 6) {
-        texto.className = 'form-control is-valid';
+//Validacion de Numero de telefono
+function valiNumTel(inputTelefono) {
+    console.log('funcion validar numero');
+    if (inputTelefono.value.trim() != '' && !isNaN(inputTelefono.value)) {
+        inputTelefono.className = 'form-control is-valid';
         return true;
     } else {
-        texto.className = 'form-control is-invalid';
+        inputTelefono.className = 'form-control is-invalid';
+        return false;
+    }
+
+}
+
+// Validacion de Checkbox
+// primero creamos una variable
+let checkTerminos = document.querySelector('#terminos');
+
+checkTerminos.addEventListener('change', function() {
+    valCheckBox();
+})
+
+
+function valCheckBox() {
+    console.log('checkbox');
+    if (checkTerminos.checked) {
+        checkTerminos.className = 'form-check-input is-valid';
+        return true;
+    } else {
+        checkTerminos.className = 'form-check-input is-invalid';
         return false;
     }
 }
-
-
-// VALIDACION DE FORMULARIO DE SUSCRIPCION
-
-
-//VALIDACIONES FORM SUSCRIPCION
 
 
 // VALIDACIONES DE REGISTRO DE PELICULAS
