@@ -17,7 +17,7 @@
     <title>Disney+</title>
 </head>
 
-<body>
+<body class="fondoLogin">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fondoNav">
             <div class="container navbarSmall">
@@ -90,7 +90,43 @@
         </nav>
     </header>
     <main>
+        <section class="container w-50 py-5">
+            <section class="row">
+                <section class="col-sm-12 col-md-7 col-lg-6 w-100">
+                    <article class="form">
+                        <div class="mb-3">
+                            <div class="text-center text-light">
+                                <h1>Login</h1>
+                            </div>
+                        </div>
+                        <form name="login">
+                            <div class="form-group text-light py-3">
+                                <label for="InputEmail">Email</label>
+                                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingresa tu email" required>
+                            </div>
+                            <div class="form-group text-light py-3">
+                                <label for="InputPass">Contraseña</label>
+                                <input type="password" name="password" id="password" class="form-control" aria-describedby="passwordHelp" placeholder="Ingresa tu contraseña" required>
+                            </div>
+                            <div class="form-group text-center text-light py-3">
+                                <p>Al ingresar aceptas nuestros <a href="error404.html" class="text-success" target="_blank">Términos y Condiciones</a></p>
+                            </div>
+                            <div class="text-center text-light py-3">
+                                <button type="submit" class="btn btn-block btn-success mx-2">Login</button>
 
+                                <button type="submit" class="btn btn-block btn-danger mx-2">Cancelar</button>
+                            </div>
+                            <div class="form-group text-light py-3">
+                                <p class="text-center">¿Olvidaste tu contraseña? <a href="error404.html" id="signup" class="text-success" target="_blank">Recuperar contraseña</a></p>
+                            </div>
+                            <div class="form-group text-light py-3">
+                                <p class="text-center">¿Aún no tienes cuenta? <a href="#" id="signup" class="text-light text-center lead"><span class="badge badge-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Suscribete</span></a></p>
+                            </div>
+                        </form>
+                    </article>
+                </section>
+            </section>
+        </section>
 
     </main>
 
@@ -132,7 +168,7 @@
                             <label class="form-check-label" for="exampleCheck1">Suscribirse a nuestro newsletter</label>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                             <div>
                                 <button type="submit" class="btn btn-success">Enviar</button>
                             </div>

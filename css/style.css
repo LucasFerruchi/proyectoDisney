@@ -140,6 +140,18 @@ footer {
 }
 
 
+/* --Formulario Login-- */
+
+.fondoLogin {
+    background-image: url(../img/Login/Wiki-background.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: auto;
+    height: auto;
+}
+
+
 /* --Modal-- */
 
 .modal-header {
