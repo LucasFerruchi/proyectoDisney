@@ -1,6 +1,6 @@
 // VALIDACIONES DE LOGIN
 //Validacion de email
-function validarEmail(email) {
+function valEmail(email) {
     // console.log(email);emilsearias@gmail.com
     let expresion = /\w+@\w+\.[a-z]{2,}$/;
     if (email.value.trim() != '' && expresion.test(email.value)) {
@@ -13,6 +13,15 @@ function validarEmail(email) {
 }
 
 // Validacion de contraseña
+function valContraseña(texto) {
+    if (texto.value.trim() != "" && texto.value.length >= 6) {
+        texto.className = 'form-control is-valid';
+        return true;
+    } else {
+        texto.className = 'form-control is-invalid';
+        return false;
+    }
+}
 
 
 // VALIDACIONES DE REGISTRO DE PELICULAS
