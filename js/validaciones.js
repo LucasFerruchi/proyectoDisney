@@ -15,6 +15,9 @@ function validarEmail(email) {
 // Validacion de contraseña
 
 
+//VALIDACIONES FORM SUSCRIPCION
+
+
 // VALIDACIONES DE REGISTRO DE PELICULAS
 //Validacion del codigo 
 function valCodigo(input) {
