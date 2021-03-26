@@ -27,6 +27,9 @@ function valContrasena(texto) {
 // VALIDACION DE FORMULARIO DE SUSCRIPCION
 
 
+//VALIDACIONES FORM SUSCRIPCION
+
+
 // VALIDACIONES DE REGISTRO DE PELICULAS
 //Validacion del codigo 
 function valCodigo(input) {
