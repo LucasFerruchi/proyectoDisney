@@ -108,8 +108,10 @@
                             </div>
                             <div class="form-group text-light py-3">
                                 <label for="InputPass">Contraseña</label>
-                                <input type="password" name="password" id="password" class="form-control" aria-describedby="passwordHelp" placeholder="La contraseña debe ser mayor a 6 caracteres" required>
-
+                                <input type="password" name="password" id="password" class="form-control" aria-describedby="passwordHelp" placeholder="La contraseña debe ser mayor a 6 caracteres" onblur="valContrasena(this)" required>
+                                <div class="invalid-feedback">
+                                    Ingrese una contraseña valida!
+                                </div>
                             </div>
                             <div class="form-group text-center text-light py-3">
                                 <p>Al ingresar aceptas nuestros <a href="error404.html" class="text-success" target="_blank">Términos y Condiciones</a></p>
@@ -215,7 +217,7 @@
         </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
-    <script src="#"></script>
+    <script src="js/validaciones.js"></script>
 
 </body>
 

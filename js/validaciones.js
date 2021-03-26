@@ -13,7 +13,7 @@ function valEmail(email) {
 }
 
 // Validacion de contraseña
-function valContraseña(texto) {
+function valContrasena(texto) {
     if (texto.value.trim() != "" && texto.value.length >= 6) {
         texto.className = 'form-control is-valid';
         return true;
