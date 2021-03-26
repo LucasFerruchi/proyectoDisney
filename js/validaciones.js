@@ -1,4 +1,22 @@
-//Validacion del codigo de la pelicula en formulario Agregar pelicula
+// VALIDACIONES DE LOGIN
+//Validacion de email
+function validarEmail(email) {
+    // console.log(email);emilsearias@gmail.com
+    let expresion = /\w+@\w+\.[a-z]{2,}$/;
+    if (email.value.trim() != '' && expresion.test(email.value)) {
+        email.className = 'form-control is-valid';
+        return true;
+    } else {
+        email.className = 'form-control is-invalid';
+        return false;
+    }
+}
+
+// Validacion de contraseña
+
+
+// VALIDACIONES DE REGISTRO DE PELICULAS
+//Validacion del codigo 
 function valCodigo(input) {
     if (input.value.trim() === "") {
         input.className = 'form-control is-invalid';
@@ -9,7 +27,7 @@ function valCodigo(input) {
     }
 }
 
-//Validacion del nombre de la pelicula en formulario Agregar pelicula
+//Validacion del nombre 
 function valNombrePelicula(input) {
     if (input.value.trim() === "") {
         input.className = 'form-control is-invalid';
@@ -20,7 +38,7 @@ function valNombrePelicula(input) {
     }
 }
 
-//Validacion categoria de la pelicula en formulario Agregar pelicula
+//Validacion de la categoria 
 function valCategoria(input) {
     if (input.value.trim() === "") {
         input.className = 'form-control is-invalid';
@@ -31,7 +49,7 @@ function valCategoria(input) {
     }
 }
 
-//Validacion de campo de descripcion en formulario Agregar pelicula
+//Validacion de campo de descripcion 
 function valDescripcion(texto) {
     if (texto.value.trim() != "" && texto.value.length >= 30) {
         texto.className = 'form-control is-valid';
