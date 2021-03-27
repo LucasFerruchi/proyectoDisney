@@ -36,33 +36,6 @@ header .boton:active {
     border-bottom: 0px;
 }
 
-
-/* .contenedorHeader { */
-
-
-/* width: 90%; */
-
-
-/* } */
-
-
-/*  */
-
-
-/* header .contenedorHeader { */
-
-
-/* display: flex; */
-
-
-/* justify-content: space-between; */
-
-
-/* align-items: center; */
-
-
-/* } */
-
 body {
     padding: 0;
     margin: 0;
@@ -85,7 +58,6 @@ footer {
 
 .lista li {
     list-style-type: none;
-    text-decoration: none;
 }
 
 
@@ -167,6 +139,7 @@ footer {
 }
 
 
+<<<<<<< HEAD
 /* Fondo Modal */
 
 .fondoModal {
@@ -175,27 +148,43 @@ footer {
 
 .fondoBoton {
     background: linear-gradient(135deg, #1e3046 0%, #133342 30%, #0b2d3d 31%, #032838 70%);
+=======
+/* --Formulario Login-- */
+
+.fondoLogin {
+    background-image: url(../img/Login/Wiki-background.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: auto;
+    height: auto;
+}
+
+
+/* --Modal-- */
+
+.modal-header {
+    color: seashell;
+    background: linear-gradient(135deg, #aebfbc 0%, #99afab 0%, #8ea6a2 0%, #829d98 0%, #d8e0de 0%, #395177 22%, #0e0e0e 100%);
+>>>>>>> a3994ee9fa89168ee799bf34502ec70ba3af583c
 }
 
 
 /* --Media Queries-- */
 
 @media all and (max-width: 767px) {
-    /* .carousel-sm-responsive { */
-    /* object-fit: fill; */
-    /* height: auto; */
-    /* } */
     header .navbarSmall {
         flex-direction: column;
+        padding: 15px;
     }
     .logo {
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 150px;
+        max-height: 150px;
         padding: auto;
         margin: auto;
     }
     .logoFooter {
-        width: 25%;
+        width: 40%;
         margin: auto;
     }
     #sadmickey {

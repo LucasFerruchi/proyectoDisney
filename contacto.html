@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="img/Logo/LogoDisneyIcon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/2ec4b6d9c2.js " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
     <title>Disney+</title>
 </head>
 
@@ -57,76 +58,82 @@
         </nav>
     </header>
     <main>
-        <div id="carouselPortadaIndex" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselPortadaIndex" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselPortadaIndex" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselPortadaIndex" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselPortadaIndex" data-bs-slide-to="3" aria-label="Slide 0"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/Soul/soul1.jpeg" class="d-block w-100" alt="img/Carousel/glee.jpg">
+        <section class="container">
+            <form id="formContacto" onsubmit="enviarMensaje(event)" id="formContacto">
+                <div class="my-3 text-light ">
+                    <label for="exampleFormControlName " class="form-label ">Nombre y Apellido</label>
+                    <input type="text " class="form-control is-invalid" id="contactoNombre" placeholder="Disney Latino " onblur="campoRequerido(this)" required>
+                    <div class="valid-feedback">
+                        Campo completo
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe ingresar Nombre y Apellido
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="img/Soul/soul2.jpeg" class="d-block w-100" alt="img/Carousel/soul.jpg">
+                <div class="my-3 text-light ">
+                    <label for="exampleFormControlInput1 " class="form-label ">Dirección de email</label>
+                    <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="disneyplus@disneyplus.com" onblur="contactoEmail(this)" required>
+                    <div class="valid-feedback">
+                        Campo completo
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe ingresar un email correcto
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="img/Soul/soul3.jpeg" class="d-block w-100" alt="img/Carousel/raya.jpg">
+                <div class="my-3 text-light ">
+                    <label for="exampleFormControlNumber " class="form-label ">Teléfono</label>
+                    <input type="number " class="form-control " id="exampleFormControlNumber " placeholder="381 123 456 " onblur="contactoNumeros(this)" required>
+                    <div class="valid-feedback">
+                        Campo completo
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe ingresar un número de teléfono
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="img/Soul/soul4.jpg" class="d-block w-100" alt="img/Carousel/raya.jpg">
+                <div class="my-3 text-light ">
+                    <label for="exampleFormControlTextarea1 " class="form-label ">Escríbanos su mensaje</label>
+                    <textarea class="form-control " id="exampleFormControlTextarea1 " rows="3 " placeholder="Deje aquí su mensaje, consulta o comentario. " onblur="contactoComentarios(this)" required></textarea>
+                    <div class="valid-feedback">
+                        Campo completo
+                    </div>
+                    <div class="invalid-feedback">
+                        Debe ingresar una consulta de al menos 20 caracteres
+                    </div>
                 </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPortadaIndex" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselPortadaIndex" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <section class="descripcion m-5">
-            <h2>Soul</h2>
-            <p>2020 <br> Aventura - Drama - Comedia <br> Película - 1 hora 40 minutos</p>
-            <hr>
-            <p class="lead">¿Alguna vez te has preguntado acerca del origen de tus sueños, intereses y pasiones? ¿Qué es aquello que te hace único? Pixar Animation Studios viaja desde las calles de Nueva York hasta los reinos cósmicos para encontrar las respuestas a
-                los interrogantes más importantes de nuestras vidas.</p>
-            <hr>
-            <p>Producción: <a href="https://es.wikipedia.org/wiki/Pixar" target="_blank">Pixar Animation Studios</a></p>
-            </div>
-            <div>
-                <button type="button" class="btn btn-light btn-lg col-12"> <a href="https://www.youtube.com/watch?v=DXkEF9Lti5Y" target="_blank">Reproducir</button>
-            </div>
+                <div class="form-check my-3 text-light ">
+                    <input type="checkbox" class="form-check-input " id="checkContacto ">
+                    <label class="form-check-label " for="checkContacto ">Acepto los <a href="error404.html "> términos y condiciones</a></label>
+                </div>
+                <button type="submit" class="btn btn-light btn-lg col-12 my-3 ">Submit</button>
+            </form>
         </section>
     </main>
-    <footer class="text-light py-2">
-        <section class="container d-flex justify-content-between">
-            <article class="row">
-                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2">
-                    <ul class="lista">
+    <footer class="text-light py-2 ">
+        <section class="container d-flex justify-content-between ">
+            <article class="row ">
+                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2 ">
+                    <ul class="lista ">
                         <li>
-                            <a href="https://disneylatino.com/" target="_blank" class="text-light">Página oficial</a>
+                            <a href="https://disneylatino.com/ " target="_blank " class="text-light ">Página oficial</a>
                         </li>
                         <li>
-                            <a href="error404.html" target="_blank" class="text-light">Privacidad</a>
+                            <a href="error404.html " target="_blank " class="text-light ">Privacidad</a>
                         </li>
                         <li>
-                            <a href="error404.html" target="_blank" class="text-light">Legales</a>
+                            <a href="error404.html " target="_blank " class="text-light ">Legales</a>
                         </li>
                     </ul>
                 </div>
 
-                <div class="col-sm-12 col-md-4 text-center">
-                    <a href="index.html"><img src="img/Logo/PngItem_291927.png " class="my-3 logoFooter" alt="Logo DisneyPlus" /></a>
+                <div class="col-sm-12 col-md-4 text-center ">
+                    <a href="index.html "><img src="img/Logo/PngItem_291927.png " class="my-3 logoFooter " alt="Logo DisneyPlus " /></a>
                 </div>
-                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2">
-                    <a href="error404.html" target="_blank"><i class="fab fa-instagram fa-2x mx-2 text-light"></i
+                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2 ">
+                    <a href="error404.html " target="_blank "><i class="fab fa-instagram fa-2x mx-2 text-light "></i
             ></a>
-                    <a href="https://www.facebook.com/Disney" target="_blank "><i class="fab fa-facebook-square fa-2x mx-2 text-light"></i
+                    <a href="https://www.facebook.com/Disney " target="_blank "><i class="fab fa-facebook-square fa-2x mx-2 text-light "></i
             ></a>
-                    <a href="error404.html" target="_blank"><i class="fab fa-twitter fa-2x mx-2 text-light"></i
+                    <a href="error404.html " target="_blank "><i class="fab fa-twitter fa-2x mx-2 text-light "></i
             ></a>
                     <br />
                     <small>&copy;Todos los derechos reservados</small>
@@ -135,7 +142,7 @@
         </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
-    <script src="js/filaPeliculas.js"></script>
+    <script src="js/contacto.js"></script>
 </body>
 
 </html>
