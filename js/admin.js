@@ -70,11 +70,11 @@ function dibujarTabla(_listaPeliculas) {
                 <td>${_listaPeliculas[i].categoria}</td>
                 <td>${_listaPeliculas[i].descripcion}</td>
                 <td><div class="form-check">
-                <input type="checkbox" class="form-check-input" checked>
+                <input type="checkbox" class="form-check-input" checked onclick="publicarPelicula(this)" id="${_listaPeliculas[i].codigo}">
                 </div>
                 </td>
                 <td>
-                <button class="btn btn-outline-warning"><i class="fas fa-star"></i></button>
+                <button class="btn btn-outline-warning" onclick="destacarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-star"></i></button>
                 <button class="btn btn-outline-primary" onclick="editarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-edit"></i></i></button>
                 <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
                 </td>
@@ -86,11 +86,11 @@ function dibujarTabla(_listaPeliculas) {
                     <td>${_listaPeliculas[i].categoria}</td>
                     <td>${_listaPeliculas[i].descripcion}</td>
                     <td><div class="form-check">
-                    <input type="checkbox" class="form-check-input" checked>
+                    <input type="checkbox" class="form-check-input" checked onclick="publicarPelicula(this)" id="${_listaPeliculas[i].codigo}">
                     </div>
                     </td>
                     <td>
-                        <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
+                        <button class="btn btn-outline-warning" onclick="destacarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="far fa-star"></i></button>
                         <button class="btn btn-outline-primary" onclick="editarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-edit"></i></i></button>
                         <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
                         </td>
@@ -104,11 +104,11 @@ function dibujarTabla(_listaPeliculas) {
                 <td>${_listaPeliculas[i].categoria}</td>
                 <td>${_listaPeliculas[i].descripcion}</td>
                 <td><div class="form-check">
-                <input type="checkbox" class="form-check-input">
+                <input type="checkbox" class="form-check-input" onclick="publicarPelicula(this)" id="${_listaPeliculas[i].codigo}">
                 </div>
                 </td>
                 <td>
-                <button class="btn btn-outline-warning"><i class="fas fa-star"></i></button>
+                <button class="btn btn-outline-warning" onclick="destacarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-star"></i></button>
                 <button class="btn btn-outline-primary" onclick="editarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-edit"></i></i></button>
                 <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
                 </td>
@@ -120,11 +120,11 @@ function dibujarTabla(_listaPeliculas) {
                     <td>${_listaPeliculas[i].categoria}</td>
                     <td>${_listaPeliculas[i].descripcion}</td>
                     <td><div class="form-check">
-                    <input type="checkbox" class="form-check-input">
+                    <input type="checkbox" class="form-check-input" onclick="publicarPelicula(this)" id="${_listaPeliculas[i].codigo}">
                     </div>
                     </td>
                     <td>
-                        <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
+                        <button class="btn btn-outline-warning" onclick="destacarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="far fa-star"></i></button>
                         <button class="btn btn-outline-primary" onclick="editarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-edit"></i></i></button>
                         <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
                         </td>
@@ -184,10 +184,10 @@ window.editarPelicula = function(boton) {
     //Cambio el estado de la Bandera
     modificarPeli = true;
     //Mostrar la ventana modal
-    console.log(modalPeli);
     modalPeli.show();
 }
 
+//Seleciona la bandera
 window.guardarPelicula = function(event) {
     event.preventDefault();
     console.log("Desde guardarPelicula");
@@ -235,4 +235,65 @@ function modificarPeliculaExistente() {
     leerPeliculas();
     //Cierro la ventana modal
     modalPeli.hide();
+}
+
+//Destacar Pelicula
+//onclick="destacarPelicula(this)" id="${_listaPeliculas[i].codigo
+window.destacarPelicula = function(boton) {
+    console.log("Holis destacar peli")
+    let codigo = boton.id;
+    let baderaDestacada = false;
+
+    for (let i in listaPeliculas) {
+        if (listaPeliculas[i].codigo === codigo) {
+            if (listaPeliculas[i].destacada === true) {
+                listaPeliculas[i].destacada = false;
+            } else {
+                listaPeliculas[i].destacada = true;
+                baderaDestacada = true;
+            }
+        }
+    }
+
+    localStorage.setItem('listaPeliculasKey', JSON.stringify(listaPeliculas));
+    //Mostamos al usuario que se modifico correctamente
+    if (baderaDestacada === true) {
+        Swal.fire(
+            'Película Destacada',
+            'La película ya es destacada',
+            'success'
+        )
+    }
+    //dibujo los datos nuevos en la tabla
+    leerPeliculas();
+}
+
+//Publicar peliculas checkbox
+//onclick="publicarPelicula(this)" id="${_listaPeliculas[i].codigo}"
+window.publicarPelicula = function(boton) {
+    console.log("Holis desde publicarPelis");
+    let codigo = boton.id;
+    let baderaPublicada = false;
+
+    for (let i in listaPeliculas) {
+        if (listaPeliculas[i].codigo === codigo) {
+            if (listaPeliculas[i].publicada === true) {
+                listaPeliculas[i].publicada = false;
+            } else {
+                listaPeliculas[i].publicada = true;
+                baderaPublicada = true;
+            }
+        }
+    }
+
+    localStorage.setItem('listaPeliculasKey', JSON.stringify(listaPeliculas));
+    //Mostamos al usuario que se modifico correctamente
+    if (baderaPublicada === true) {
+        Swal.fire(
+            'Película Publicada',
+            'La película ya se encuentra publicada',
+            'success'
+        )
+    }
+    leerPeliculas();
 }
