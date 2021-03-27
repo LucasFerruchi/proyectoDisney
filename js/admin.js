@@ -269,7 +269,6 @@ window.destacarPelicula = function(boton) {
 }
 
 //Publicar peliculas checkbox
-//onclick="publicarPelicula(this)" id="${_listaPeliculas[i].codigo}"
 window.publicarPelicula = function(boton) {
     console.log("Holis desde publicarPelis");
     let codigo = boton.id;
