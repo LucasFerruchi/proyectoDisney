@@ -184,6 +184,7 @@ window.editarPelicula = function(boton) {
     //Cambio el estado de la Bandera
     modificarPeli = true;
     //Mostrar la ventana modal
+    console.log(modalPeli);
     modalPeli.show();
 }
 
