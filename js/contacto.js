@@ -55,3 +55,20 @@ function contactoComentarios(texto) {
         return false;
     }
 }
+
+let checkTerminos = document.querySelector('#checkContacto');
+
+checkTerminos.addEventListener('change', function() {
+    validarTerminos();
+})
+
+function validarTerminos() {
+    console.log('desde la funcion del checkbox');
+    if (checkTerminos.checked) {
+        checkTerminos.className = 'form-check-input is-valid';
+        return true;
+    } else {
+        checkTerminos.className = 'form-check-input is-invalid';
+        return false;
+    }
+}
