@@ -99,16 +99,15 @@ function valCheckBox() {
 
 //Validacion general del formulario suscrpcion completo luego de validar campo por campo
 function valGeneral(event) {
+    // window.valGeneral = function(event) {
+
     event.preventDefault();
     console.log('desde la funcion validar general');
     if (valSuscrpNombre(document.getElementById('nombre')) === true &&
         valSuscrpApellido(document.getElementById('apellido')) === true &&
         valEmail(document.getElementById('email')) &&
-        valiNumTe(document.getElementById('telefono')) &&
-        valCheckBox()) {
-        // aqui debo enviar el mail
-        // enviarEmail();
-    } else {
+        valiNumTel(document.getElementById('telefono')) &&
+        valCheckBox()) {} else {
         // indicar el error
         alert('debe corregir los datos cargados')
     }
