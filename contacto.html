@@ -20,7 +20,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fondoNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fondoNav">
             <div class="container navbarSmall">
                 <div class="logo mx-5">
                     <a href="index.html"><img src="img/Logo/PngItem_Disney.png" class="w-100" alt="Logo DisneyPlus"></a>
@@ -29,7 +29,7 @@
                     <button class="navbar-toggler boton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse m-lg-0 m-md-3 m-sm-3" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link m-md-2" href="index.html">
@@ -38,16 +38,50 @@
                             </li>
                             <li class="nav-item dropdown m-md-2">
                                 <a class="nav-link dropdown-toggle my-2 boton" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown</a>
+                                Menu</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Login</a></li>
-                                    <li><a class="dropdown-item" href="#">Registro</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="formularioLogin.html">Login</a></li>
+                            </li>
+                            <li>
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Suscripción</button>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="admin.html" target="_blank">Registro de peliculas</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Contacto</a></li>
+                            </ul>
+                            </li>
+                            <li class="nav-item dropdown m-md-2">
+                                <a class="nav-link dropdown-toggle my-2 boton" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorias</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Peliculas</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Contacto</a></li>
+                                    <li><a class="dropdown-item" href="#">Series</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Cortos</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Animadas</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Accion</a></li>
                                 </ul>
                             </li>
+
                         </ul>
                         <form class="d-flex justify-content-between m-lg-2 m-md-2">
                             <input class="form-control me-2 boton" type="search" placeholder="Buscar" aria-label="Search">
@@ -111,32 +145,42 @@
             </form>
         </section>
     </main>
-    <footer class="text-light py-2 ">
-        <section class="container d-flex justify-content-between ">
-            <article class="row ">
-                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2 ">
-                    <ul class="lista ">
+    <footer class="text-light py-2">
+        <section class="container d-flex justify-content-between">
+            <article class="row">
+                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2">
+                    <ul class="lista">
                         <li>
-                            <a href="https://disneylatino.com/ " target="_blank " class="text-light ">Página oficial</a>
-                        </li>
-                        <li>
-                            <a href="error404.html " target="_blank " class="text-light ">Privacidad</a>
-                        </li>
-                        <li>
-                            <a href="error404.html " target="_blank " class="text-light ">Legales</a>
-                        </li>
-                    </ul>
-                </div>
+                            <a href="https://disneylatino.com/" target="blank" class="text-light">Página oficial</a
+                >
+              </li>
+              <li>
+                <a href="error404.html" target="blank" class="text-light"
+                  >Privacidad</a
+                >
+              </li>
+              <li>
+                <a href="error404.html" target="blank" class="text-light"
+                  >Legales</a
+                >
+              </li>
+            </ul>
+          </div>
 
-                <div class="col-sm-12 col-md-4 text-center ">
-                    <a href="index.html "><img src="img/Logo/PngItem_291927.png " class="my-3 logoFooter " alt="Logo DisneyPlus " /></a>
+          <div class="col-sm-12 col-md-4 text-center">
+            <a href="index.html"
+              ><img
+                src="img/Logo/PngItem_291927.png "
+                class="my-3 logoFooter"
+                alt="Logo DisneyPlus"
+            /></a>
                 </div>
-                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2 ">
-                    <a href="error404.html " target="_blank "><i class="fab fa-instagram fa-2x mx-2 text-light "></i
+                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2">
+                    <a href="error404.html" target="blank"><i class="fab fa-instagram fa-2x mx-2 text-light"></i
             ></a>
-                    <a href="https://www.facebook.com/Disney " target="_blank "><i class="fab fa-facebook-square fa-2x mx-2 text-light "></i
+                    <a href="https://www.facebook.com/Disney" target="blank "><i class="fab fa-facebook-square fa-2x mx-2 text-light"></i
             ></a>
-                    <a href="error404.html " target="_blank "><i class="fab fa-twitter fa-2x mx-2 text-light "></i
+                    <a href="error404.html" target="blank"><i class="fab fa-twitter fa-2x mx-2 text-light"></i
             ></a>
                     <br />
                     <small>&copy;Todos los derechos reservados</small>
