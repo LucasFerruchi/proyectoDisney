@@ -1,16 +1,18 @@
 import { Pelis } from './peliculasClass.js'
 let listaPeliculas = [];
 const modalPeli = new bootstrap.Modal(document.getElementById('modalPeliculas'))
-
 let btnAgregar = document.getElementById("btnAgregar");
+//Bandera que toma el valor true para modicar la película y cuando sea false agrego una Pelicula
+let modificarPeli = false;
+
 btnAgregar.addEventListener("click", function() {
+    limpiarFormulario();
     modalPeli.show();
 })
 leerPeliculas();
 
 // Funcion para agregar una película 
-window.agregarPelicula = function(event) {
-    event.preventDefault();
+function agregarPelicula() {
     console.log("desde agregarPeliculas")
         //validar general if (validarGeneral)
     let codigo = document.getElementById("codigo").value;
@@ -36,8 +38,9 @@ window.agregarPelicula = function(event) {
     leerPeliculas();
     modalPeli.hide();
 }
-
+//Limpiar formulario
 function limpiarFormulario() {
+    modificarPeli = false;
     document.getElementById("formPeli").reset();
 }
 
@@ -72,7 +75,7 @@ function dibujarTabla(_listaPeliculas) {
                 </td>
                 <td>
                 <button class="btn btn-outline-warning"><i class="fas fa-star"></i></button>
-                <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+                <button class="btn btn-outline-primary" onclick="editarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-edit"></i></i></button>
                 <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
                 </td>
                 </tr>`
@@ -88,7 +91,7 @@ function dibujarTabla(_listaPeliculas) {
                     </td>
                     <td>
                         <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
-                        <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+                        <button class="btn btn-outline-primary" onclick="editarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-edit"></i></i></button>
                         <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
                         </td>
                 </tr>`
@@ -106,7 +109,7 @@ function dibujarTabla(_listaPeliculas) {
                 </td>
                 <td>
                 <button class="btn btn-outline-warning"><i class="fas fa-star"></i></button>
-                <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+                <button class="btn btn-outline-primary" onclick="editarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-edit"></i></i></button>
                 <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
                 </td>
                 </tr>`
@@ -122,7 +125,7 @@ function dibujarTabla(_listaPeliculas) {
                     </td>
                     <td>
                         <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
-                        <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+                        <button class="btn btn-outline-primary" onclick="editarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-edit"></i></i></button>
                         <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
                         </td>
                 </tr>`
@@ -131,7 +134,7 @@ function dibujarTabla(_listaPeliculas) {
         tabla.innerHTML += filas;
     }
 }
-
+//Función para eliminar película
 window.eliminarPelicula = function(boton) {
     console.log(boton.id);
     Swal.fire({
@@ -162,4 +165,73 @@ window.eliminarPelicula = function(boton) {
             )
         }
     })
+}
+
+//Función para editar película
+window.editarPelicula = function(boton) {
+    console.log("Holis editarPelicula");
+    //busco la pelicula que quiero (solo el primero)
+    let peliEncontrada = listaPeliculas.find((peli) => { return peli.codigo === boton.id })
+        //console.log(peliEncontrada);
+        //cargo los datos en el formulario
+    document.getElementById('codigo').value = peliEncontrada.codigo;
+    document.getElementById('nombPeli').value = peliEncontrada.nombre;
+    document.getElementById('categoria').value = peliEncontrada.categoria;
+    document.getElementById('descripcion').value = peliEncontrada.descripcion;
+    document.getElementById('imagen').value = peliEncontrada.imagen;
+    document.getElementById('publicada').checked = peliEncontrada.publicada;
+    document.getElementById('destacada').checked = peliEncontrada.destacada;
+    //Cambio el estado de la Bandera
+    modificarPeli = true;
+    //Mostrar la ventana modal
+    modalPeli.show();
+}
+
+window.guardarPelicula = function(event) {
+    event.preventDefault();
+    console.log("Desde guardarPelicula");
+    if (modificarPeli) {
+        //Modifico la Peli
+        console.log("Aqui debemos modificar la pelicula")
+        modificarPeliculaExistente();
+    } else {
+        //Agrego una Peli nueva
+        agregarPelicula();
+    }
+}
+
+//Modificar Pelicula
+function modificarPeliculaExistente() {
+    //VALIDAR GENERAL
+    //tomo los valores viejos del formulario
+    let codigo = document.getElementById('codigo').value;
+    let nombre = document.getElementById('nombPeli').value;
+    let categoria = document.getElementById('categoria').value;
+    let descripcion = document.getElementById('descripcion').value;
+    let imagen = document.getElementById('imagen').value;
+    let publicada = document.getElementById('publicada').checked;
+    let destacada = document.getElementById('destacada').checked;
+    //busco el objeto y modifico - recorro el arreglo
+    for (let i in listaPeliculas) {
+        if (listaPeliculas[i].codigo === codigo) {
+            listaPeliculas[i].nombrePeli = nombre;
+            listaPeliculas[i].categoria = categoria;
+            listaPeliculas[i].descripcion = descripcion;
+            listaPeliculas[i].imagen = imagen;
+            listaPeliculas[i].publicada = publicada;
+            listaPeliculas[i].destacada = destacada;
+        }
+    }
+    //actualizo localStorage
+    localStorage.setItem('listaPeliculasKey', JSON.stringify(listaPeliculas));
+    //Mostamos al usuario que se modifico correctamente
+    Swal.fire(
+            'Película modificada',
+            'La película se modificó con éxito!',
+            'success'
+        )
+        //dibujo los datos nuevos en la tabla
+    leerPeliculas();
+    //Cierro la ventana modal
+    modalPeli.hide();
 }
