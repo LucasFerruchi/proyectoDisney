@@ -59,39 +59,107 @@ function dibujarTabla(_listaPeliculas) {
     tabla.innerHTML = "";
     let filas;
     for (let i in _listaPeliculas) {
-        if (!_listaPeliculas[i].destacada) {
-            filas = `<tr>
-        <td>${_listaPeliculas[i].codigo}</td>
-        <td>${_listaPeliculas[i].nombre}</td>
-        <td>${_listaPeliculas[i].categoria}</td>
-        <td>${_listaPeliculas[i].descripcion}</td>
-        <td>${_listaPeliculas[i].publicada}</td>
-        <td>
-            <button class="btn btn-outline-warning"><i class="fas fa-star"></i></button>
-            <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
-            <button class="btn btn-outline-danger"><i class="fas fa-trash-restore"></i></button>
-        </td>
-        </tr>`
-        } else {
-            {
+        if (_listaPeliculas[i].publicada) {
+            if (_listaPeliculas[i].destacada) {
                 filas = `<tr>
-            <td>${_listaPeliculas[i].codigo}</td>
-            <td>${_listaPeliculas[i].nombre}</td>
-            <td>${_listaPeliculas[i].categoria}</td>
-            <td>${_listaPeliculas[i].descripcion}</td>
-            
-            <td><div class="form-check">
+                <td>${_listaPeliculas[i].codigo}</td>
+                <td>${_listaPeliculas[i].nombre}</td>
+                <td>${_listaPeliculas[i].categoria}</td>
+                <td>${_listaPeliculas[i].descripcion}</td>
+                <td><div class="form-check">
                 <input type="checkbox" class="form-check-input" checked>
-            </div></td>
-            
-            <td>
-                <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
+                </div>
+                </td>
+                <td>
+                <button class="btn btn-outline-warning"><i class="fas fa-star"></i></button>
                 <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
-                <button class="btn btn-outline-danger"><i class="fas fa-trash-restore"></i></button>
-            </td>
-            </tr>`
+                <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
+                </td>
+                </tr>`
+            } else {
+                filas = `<tr>
+                    <td>${_listaPeliculas[i].codigo}</td>
+                    <td>${_listaPeliculas[i].nombre}</td>
+                    <td>${_listaPeliculas[i].categoria}</td>
+                    <td>${_listaPeliculas[i].descripcion}</td>
+                    <td><div class="form-check">
+                    <input type="checkbox" class="form-check-input" checked>
+                    </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
+                        <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+                        <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
+                        </td>
+                </tr>`
+            }
+        } else {
+            if (_listaPeliculas[i].destacada) {
+                filas = `<tr>
+                <td>${_listaPeliculas[i].codigo}</td>
+                <td>${_listaPeliculas[i].nombre}</td>
+                <td>${_listaPeliculas[i].categoria}</td>
+                <td>${_listaPeliculas[i].descripcion}</td>
+                <td><div class="form-check">
+                <input type="checkbox" class="form-check-input">
+                </div>
+                </td>
+                <td>
+                <button class="btn btn-outline-warning"><i class="fas fa-star"></i></button>
+                <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+                <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
+                </td>
+                </tr>`
+            } else {
+                filas = `<tr>
+                    <td>${_listaPeliculas[i].codigo}</td>
+                    <td>${_listaPeliculas[i].nombre}</td>
+                    <td>${_listaPeliculas[i].categoria}</td>
+                    <td>${_listaPeliculas[i].descripcion}</td>
+                    <td><div class="form-check">
+                    <input type="checkbox" class="form-check-input">
+                    </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
+                        <button class="btn btn-outline-primary"><i class="fas fa-edit"></i></i></button>
+                        <button class="btn btn-outline-danger" onclick="eliminarPelicula(this)" id="${_listaPeliculas[i].codigo}"><i class="fas fa-trash-restore"></i></button>
+                        </td>
+                </tr>`
             }
         }
         tabla.innerHTML += filas;
     }
+}
+
+window.eliminarPelicula = function(boton) {
+    console.log(boton.id);
+    Swal.fire({
+        title: 'Estas seguro de eliminar la película',
+        text: "No podrás volver atras luego de eliminar la película",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let peliculasFiltradas = listaPeliculas.filter(function(peli) {
+                return (peli.codigo != boton.id)
+            });
+            listaPeliculas = peliculasFiltradas;
+
+            console.log(peliculasFiltradas);
+            //Guardo los datos en localStorage
+            localStorage.setItem('listaPeliculasKey', JSON.stringify(peliculasFiltradas))
+                //carga los nuevos datos
+            leerPeliculas();
+            Swal.fire(
+                'PELICULA ELIMINADA',
+                'La película fue eliminada.',
+                'success'
+            )
+        }
+    })
 }
