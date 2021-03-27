@@ -58,7 +58,6 @@ footer {
 
 .lista li {
     list-style-type: none;
-    text-decoration: none;
 }
 
 
@@ -163,21 +162,18 @@ footer {
 /* --Media Queries-- */
 
 @media all and (max-width: 767px) {
-    /* .carousel-sm-responsive { */
-    /* object-fit: fill; */
-    /* height: auto; */
-    /* } */
     header .navbarSmall {
         flex-direction: column;
+        padding: 15px;
     }
     .logo {
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 150px;
+        max-height: 150px;
         padding: auto;
         margin: auto;
     }
     .logoFooter {
-        width: 25%;
+        width: 40%;
         margin: auto;
     }
     #sadmickey {
