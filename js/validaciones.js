@@ -116,6 +116,7 @@ function valGeneral(event) {
 
 // VALIDACIONES DE REGISTRO DE PELICULAS
 //Validacion del codigo 
+/*
 function valCodigo(input) {
     if (input.value.trim() === "") {
         input.className = 'form-control is-invalid';
@@ -163,4 +164,4 @@ function valDescripcion(texto) {
 function contadorCaracteres(caracter) {
     document.getElementById("caracterNum").innerHTML = caracter.value.length + ' caracteres';
 
-}
+}*/
