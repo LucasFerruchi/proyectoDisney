@@ -215,7 +215,7 @@ function contadorCaracteres(caracter) {
 
 }*/
 //Función para limpiar las validaciones y el contador de caracteres
-export function limpiarValidaciones() {
+export function limpiarValidacionesAdmin() {
     document.querySelector('#codigo').className = "form-control";
     document.querySelector('#nombPeli').className = "form-control";
     document.querySelector('#categoria').className = "form-control"
