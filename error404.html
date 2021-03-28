@@ -28,52 +28,77 @@
 
 <body>
     <header>
-        <div class="contenedorHeader">
-            <article class="logo ml-1">
-                <a href="index.html"><img src="img/Logo/PngItem_Disney.png" class="w-75" alt="Logo DisneyPlus" /></a>
-            </article>
-            <nav class="navbar navbar-expand-md navbar-dark">
-                <section>
-                    <button class="navbar-toggler mb-3 mr-5" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active mx-2">
-                                <a class="nav-link" href="index.html">Inicio</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fondoNav">
+            <div class="container navbarSmall">
+                <div class="logo mx-5">
+                    <a href="index.html"><img src="img/Logo/PngItem_Disney.png" class="w-100" alt="Logo DisneyPlus"></a>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="navbar-toggler boton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse m-lg-0 m-md-3 m-sm-3" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link m-md-2" href="index.html">
+                                    <button class="boton nav-link active" type="button" aria-current="page"><i class="fas fa-home mx-2"></i>Inicio</button>
+                                </a>
                             </li>
-                            <li class="nav-item active mx-2">
-                                <a class="nav-link mx-2" href="#"><span
-                      class="badge badge-success"
-                      data-toggle="modal"
-                      data-target="#modalSubs"
-                      >Suscripción</span
-                    ></a
-                  >
-                </li>
-                <li class="nav-item active mx-2">
-                  <a class="nav-link mx-2" href="#"
-                    ><span
-                      class="badge badge-success"
-                      data-toggle="modal"
-                      data-target="#modalSubs"
-                      >Login</span
-                    ></a
-                  >
-                </li>
-                <li class="nav-item mx-2">
-                  <a class="nav-link" href="contacto.html">Contacto</a>
+                            <li class="nav-item dropdown m-md-2">
+                                <a class="nav-link dropdown-toggle my-2 boton" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Menu</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="formularioLogin.html">Login</a></li>
                             </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                            <li>
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Suscripción</button>
                             </li>
-                        </ul>
-                    </div>
-                </section>
-            </nav>
-        </div>
-    </header>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="admin.html" target="_blank">Registro de peliculas</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Contacto</a></li>
+                            </ul>
+                            </li>
+                            <li class="nav-item dropdown m-md-2">
+                                <a class="nav-link dropdown-toggle my-2 boton" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorias</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Peliculas</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Series</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Cortos</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Animadas</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Accion</a></li>
+                                </ul>
+                            </li>
 
+                        </ul>
+                        <form class="d-flex justify-content-between m-lg-2 m-md-2">
+                            <input class="form-control me-2 boton" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn- text-light boton" type="submit"><i class="fas fa-check"></i></button>
+                        </form>
+                    </div>
+                </div>
+        </nav>
+    </header>
     <main>
 
         <section id="404" class="container">
