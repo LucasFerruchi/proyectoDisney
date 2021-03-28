@@ -1,5 +1,5 @@
 import { Pelis } from './peliculasClass.js';
-import { valCodigo, valNombrePelicula, valCategoria, valDescripcion, contarCaracteres, limpiarValidacionesAdmin } from './validaciones.js'
+import { valCodigo, valNombrePelicula, valCategoria, valDescripcion, contarCaracteres, limpiarValidacionesAdmin } from './validacionesAdmin.js'
 
 let validacionCodigo = document.getElementById("codigo");
 validacionCodigo.addEventListener("blur", function() {
