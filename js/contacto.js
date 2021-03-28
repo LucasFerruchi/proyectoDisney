@@ -1,16 +1,3 @@
-window.enviarMensaje = function(event) {
-    event.preventDefault();
-    console.log("Desde la función enviarMensaje");
-    Swal.fire({
-        title: '¡Gracias!',
-        text: 'Hemos recibido tu mensaje.',
-        imageUrl: 'img/Contacto/happymm.png',
-        imageWidth: 200,
-        imageHeight: 200,
-        imageAlt: 'Happy Mickey',
-    })
-}
-
 function campoRequerido(input) {
     console.log('Estoy en la función campoRequerido');
     if (input.value === '') {
@@ -56,19 +43,60 @@ function contactoComentarios(texto) {
     }
 }
 
-let checkTerminos = document.querySelector('#checkContacto');
-
-checkTerminos.addEventListener('change', function() {
-    validarTerminos();
-})
-
-function validarTerminos() {
-    console.log('desde la funcion del checkbox');
-    if (checkTerminos.checked) {
-        checkTerminos.className = 'form-check-input is-valid';
-        return true;
+function validarContactoGeneral(event) {
+    event.preventDefault();
+    console.log("Desde la función validarContactoGeneral");
+    event.preventDefault();
+    if (campoRequerido(document.querySelector('#contactoNombre')) &&
+        contactoEmail(document.querySelector('#exampleFormControlInput1')) &&
+        contactoNumeros(document.querySelector('#contactoNumero')) &&
+        contactoComentarios(document.querySelector('#exampleFormControlTextarea1'))) {
+        console.log("Desde la función validarContactoGeneral");
+        enviarEmail();
+        Swal.fire({
+            title: '¡Gracias!',
+            text: 'Hemos recibido tu mensaje.',
+            imageUrl: 'img/Contacto/happymm.png',
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: 'Happy Mickey',
+        })
     } else {
-        checkTerminos.className = 'form-check-input is-invalid';
-        return false;
+        console.log("No se pudo enviar el mail");
+        alert("No se pudo enviar su mensaje. Revise los datos ingresados.")
     }
+}
+
+function enviarEmail() {
+    let suscripcion = document.querySelector('#formContacto');
+    let alert = document.querySelector('#alerta');
+    emailjs.send("service_nllcf77", "template_9t8qc7c", {
+        to_name: "Sr. Administrador:",
+        from_name: document.querySelector('#contactoNombre').value,
+        message: `Email: ${document.querySelector('#exampleFormControlInput1').value} -
+                Teléfono: ${document.querySelector('#contactoNumero').value} -
+                Consulta: ${document.querySelector('#exampleFormControlTextarea1').value} .-
+                `
+    }).then(function(reponse) {
+            console.log("Pudo enviar el mail.")
+            suscripcion.reset();
+            limpiarFormularioContacto();
+            limpiarValidacionesContacto();
+        },
+        function(error) {
+            console.log("No se pudo enviar el mail.")
+            alert.className = "alert alert-danger mt-3";
+            alert.innerHTML = `${document.querySelector('#contactoNombre').value} Ha ocurrido un fallo al enviar su consulta por favor intente nuevamente`;
+        })
+}
+
+function limpiarFormularioContacto() {
+    document.getElementById('formContacto').reset();
+}
+
+function limpiarValidacionesContacto() {
+    document.querySelector('#contactoNombre').className = "form-control";
+    document.querySelector('#exampleFormControlInput1').className = "form-control";
+    document.querySelector('#contactoNumero').className = "form-control";
+    document.querySelector('#exampleFormControlTextarea1').className = "form-control";
 }

@@ -15,12 +15,18 @@
     <link rel="shortcut icon" href="img/Logo/LogoDisneyIcon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/2ec4b6d9c2.js " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_giD19hoIhrBQFDI7rkoiP");
+        })();
+    </script>
     <title>Disney+</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fondoNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fondoNav">
             <div class="container navbarSmall">
                 <div class="logo mx-5">
                     <a href="index.html"><img src="img/Logo/PngItem_Disney.png" class="w-100" alt="Logo DisneyPlus"></a>
@@ -29,7 +35,7 @@
                     <button class="navbar-toggler boton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse m-lg-0 m-md-3 m-sm-3" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link m-md-2" href="index.html">
@@ -38,16 +44,50 @@
                             </li>
                             <li class="nav-item dropdown m-md-2">
                                 <a class="nav-link dropdown-toggle my-2 boton" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown</a>
+                                Menu</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Login</a></li>
-                                    <li><a class="dropdown-item" href="#">Registro</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="formularioLogin.html">Login</a></li>
+                            </li>
+                            <li>
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Suscripción</button>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="admin.html" target="_blank">Registro de peliculas</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Contacto</a></li>
+                            </ul>
+                            </li>
+                            <li class="nav-item dropdown m-md-2">
+                                <a class="nav-link dropdown-toggle my-2 boton" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorias</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Peliculas</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Contacto</a></li>
+                                    <li><a class="dropdown-item" href="#">Series</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Cortos</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Animadas</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Accion</a></li>
                                 </ul>
                             </li>
+
                         </ul>
                         <form class="d-flex justify-content-between m-lg-2 m-md-2">
                             <input class="form-control me-2 boton" type="search" placeholder="Buscar" aria-label="Search">
@@ -59,10 +99,10 @@
     </header>
     <main>
         <section class="container">
-            <form id="formContacto" onsubmit="enviarMensaje(event)" id="formContacto">
+            <form id="formContacto" onsubmit="validarContactoGeneral(event)" id="formContacto">
                 <div class="my-3 text-light ">
                     <label for="exampleFormControlName " class="form-label ">Nombre y Apellido</label>
-                    <input type="text " class="form-control is-invalid" id="contactoNombre" placeholder="Disney Latino " onblur="campoRequerido(this)" required>
+                    <input type="text " class="form-control" id="contactoNombre" placeholder="Disney Latino " onblur="campoRequerido(this)" required>
                     <div class="valid-feedback">
                         Campo completo
                     </div>
@@ -71,8 +111,8 @@
                     </div>
                 </div>
                 <div class="my-3 text-light ">
-                    <label for="exampleFormControlInput1 " class="form-label ">Dirección de email</label>
-                    <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="disneyplus@disneyplus.com" onblur="contactoEmail(this)" required>
+                    <label for="exampleFormControlInput1" class="form-label">Dirección de email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="disneyplus@disneyplus.com" onblur="contactoEmail(this)" required>
                     <div class="valid-feedback">
                         Campo completo
                     </div>
@@ -82,7 +122,7 @@
                 </div>
                 <div class="my-3 text-light ">
                     <label for="exampleFormControlNumber " class="form-label ">Teléfono</label>
-                    <input type="number " class="form-control " id="exampleFormControlNumber " placeholder="381 123 456 " onblur="contactoNumeros(this)" required>
+                    <input type="number " class="form-control " id="contactoNumero" placeholder="381 123 456 " onblur="contactoNumeros(this)" required>
                     <div class="valid-feedback">
                         Campo completo
                     </div>
@@ -92,7 +132,7 @@
                 </div>
                 <div class="my-3 text-light ">
                     <label for="exampleFormControlTextarea1 " class="form-label ">Escríbanos su mensaje</label>
-                    <textarea class="form-control " id="exampleFormControlTextarea1 " rows="3 " placeholder="Deje aquí su mensaje, consulta o comentario. " onblur="contactoComentarios(this)" required></textarea>
+                    <textarea class="form-control " id="exampleFormControlTextarea1" rows="3 " placeholder="Deje aquí su mensaje, consulta o comentario. " onblur="contactoComentarios(this)" required></textarea>
                     <div class="valid-feedback">
                         Campo completo
                     </div>
@@ -100,43 +140,49 @@
                         Debe ingresar una consulta de al menos 20 caracteres
                     </div>
                 </div>
-                <div class="form-check my-3 text-light ">
-                    <input type="checkbox" class="form-check-input " id="checkContacto ">
-                    <label class="form-check-label " for="checkContacto ">Acepto los <a href="error404.html "> términos y condiciones</a></label>
-                    <div class="invalid-feedback">
-                        Debe aceptar los términos y condiciones.
-                    </div>
+                <div class="my-5 text-light text-center">
+                    <p>Al enviar tu mensaje aceptas nuestros <a href="error404.html "> términos y condiciones</a></p>
                 </div>
-                <button type="submit" class="btn btn-light btn-lg col-12 my-3 ">Submit</button>
+                <button type="submit" class="btn btn-light btn-lg col-12 my-3">Enviar mensaje</button>
             </form>
         </section>
     </main>
-    <footer class="text-light py-2 ">
-        <section class="container d-flex justify-content-between ">
-            <article class="row ">
-                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2 ">
-                    <ul class="lista ">
+    <footer class="text-light py-2">
+        <section class="container d-flex justify-content-between">
+            <article class="row">
+                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2">
+                    <ul class="lista">
                         <li>
-                            <a href="https://disneylatino.com/ " target="_blank " class="text-light ">Página oficial</a>
-                        </li>
-                        <li>
-                            <a href="error404.html " target="_blank " class="text-light ">Privacidad</a>
-                        </li>
-                        <li>
-                            <a href="error404.html " target="_blank " class="text-light ">Legales</a>
-                        </li>
-                    </ul>
-                </div>
+                            <a href="https://disneylatino.com/" target="blank" class="text-light">Página oficial</a
+                >
+              </li>
+              <li>
+                <a href="error404.html" target="blank" class="text-light"
+                  >Privacidad</a
+                >
+              </li>
+              <li>
+                <a href="error404.html" target="blank" class="text-light"
+                  >Legales</a
+                >
+              </li>
+            </ul>
+          </div>
 
-                <div class="col-sm-12 col-md-4 text-center ">
-                    <a href="index.html "><img src="img/Logo/PngItem_291927.png " class="my-3 logoFooter " alt="Logo DisneyPlus " /></a>
+          <div class="col-sm-12 col-md-4 text-center">
+            <a href="index.html"
+              ><img
+                src="img/Logo/PngItem_291927.png "
+                class="my-3 logoFooter"
+                alt="Logo DisneyPlus"
+            /></a>
                 </div>
-                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2 ">
-                    <a href="error404.html " target="_blank "><i class="fab fa-instagram fa-2x mx-2 text-light "></i
+                <div class="col-sm-12 col-md-4 text-center mt-5 mb-2">
+                    <a href="error404.html" target="blank"><i class="fab fa-instagram fa-2x mx-2 text-light"></i
             ></a>
-                    <a href="https://www.facebook.com/Disney " target="_blank "><i class="fab fa-facebook-square fa-2x mx-2 text-light "></i
+                    <a href="https://www.facebook.com/Disney" target="blank "><i class="fab fa-facebook-square fa-2x mx-2 text-light"></i
             ></a>
-                    <a href="error404.html " target="_blank "><i class="fab fa-twitter fa-2x mx-2 text-light "></i
+                    <a href="error404.html" target="blank"><i class="fab fa-twitter fa-2x mx-2 text-light"></i
             ></a>
                     <br />
                     <small>&copy;Todos los derechos reservados</small>
