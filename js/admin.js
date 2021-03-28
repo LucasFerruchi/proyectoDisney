@@ -1,5 +1,5 @@
 import { Pelis } from './peliculasClass.js';
-import { valCodigo, valNombrePelicula, valCategoria, valDescripcion, contarCaracteres } from './validaciones.js'
+import { valCodigo, valNombrePelicula, valCategoria, valDescripcion, contarCaracteres, limpiarValidaciones } from './validaciones.js'
 
 let validacionCodigo = document.getElementById("codigo");
 validacionCodigo.addEventListener("blur", function() {
@@ -72,6 +72,7 @@ function agregarPelicula() {
 //Limpiar formulario
 function limpiarFormulario() {
     modificarPeli = false;
+    limpiarValidaciones();
     document.getElementById("formPeli").reset();
 }
 
@@ -201,6 +202,7 @@ window.eliminarPelicula = function(boton) {
 //Función para editar película
 window.editarPelicula = function(boton) {
     console.log("Holis editarPelicula");
+    limpiarValidaciones();
     //busco la pelicula que quiero (solo el primero)
     let peliEncontrada = listaPeliculas.find((peli) => { return peli.codigo === boton.id })
         //console.log(peliEncontrada);
@@ -223,13 +225,21 @@ window.editarPelicula = function(boton) {
 window.guardarPelicula = function(event) {
     event.preventDefault();
     console.log("Desde guardarPelicula");
-    if (modificarPeli) {
-        //Modifico la Peli
-        console.log("Aqui debemos modificar la pelicula")
-        modificarPeliculaExistente();
+    if (valCodigo(validacionCodigo) && valCategoria(validacionCategoria) && valNombrePelicula(validacionNombrePeli) && valDescripcion(validacionDescripcion)) {
+        if (modificarPeli) {
+            //Modifico la Peli
+            console.log("Aqui debemos modificar la pelicula")
+            modificarPeliculaExistente();
+        } else {
+            //Agrego una Peli nueva
+            agregarPelicula();
+        }
     } else {
-        //Agrego una Peli nueva
-        agregarPelicula();
+        Swal.fire(
+            'Oopssss...',
+            'Ingrese los datos completos',
+            'error'
+        );
     }
 }
 
