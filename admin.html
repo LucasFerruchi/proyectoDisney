@@ -152,24 +152,22 @@
                         <!-- Codigo -->
                         <div class="mb-3">
                             <label for="form-label">Código</label>
-                            <input type="text" class="form-control" id="codigo" placeholder="Ingrese un código para la película">
+                            <input type="number" class="form-control" id="codigo" placeholder="Ingrese un código para la película(solo números)." required>
                         </div>
                         <!-- nombPeli -->
                         <div class="mb-3">
                             <label for="form-label">Nombre de Película:</label>
-                            <input type="text" class="form-control" id="nombPeli" placeholder="Ingrese el nombre para la película">
+                            <input type="text" class="form-control" id="nombPeli" placeholder="Ingrese el nombre para la película" required>
                         </div>
                         <!-- categoria -->
                         <div class="mb-3">
                             <label for="form-label">Categoría:</label>
-                            <input type="text" class="form-control" id="categoria" placeholder="Categoria de película.">
-                            <!-- onblur="valCategoria(this)" required> -->
+                            <input type="text" class="form-control" id="categoria" placeholder="Películas/Series/Cortos/Animadas/Acción" required>
                         </div>
                         <!-- descripcion -->
                         <div class="mb-3">
                             <label for="form-label">Descripción:</label>
-                            <textarea type="text" class="form-control" id="descripcion" placeholder="Descripción de la película. Debe contar con mas de 30 caracteres."></textarea>
-                            <!--onblur="valDescripcion(this)" onkeypress="contadorCaracteres (this)" required> -->
+                            <textarea type="text" class="form-control" id="descripcion" placeholder="Descripción de la película. Debe contar con mas de 30 caracteres." required></textarea>
                             <div>
                                 <p id="caracteres">0 caracteres</p>
                             </div>
