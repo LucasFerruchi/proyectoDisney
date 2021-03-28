@@ -15,6 +15,12 @@
     <link rel="shortcut icon" href="img/Logo/LogoDisneyIcon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/2ec4b6d9c2.js " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_giD19hoIhrBQFDI7rkoiP");
+        })();
+    </script>
     <title>Disney+</title>
 </head>
 
@@ -93,10 +99,10 @@
     </header>
     <main>
         <section class="container">
-            <form id="formContacto" onsubmit="enviarMensaje(event)" id="formContacto">
+            <form id="formContacto" onsubmit="validarContactoGeneral(event)" id="formContacto">
                 <div class="my-3 text-light ">
                     <label for="exampleFormControlName " class="form-label ">Nombre y Apellido</label>
-                    <input type="text " class="form-control is-invalid" id="contactoNombre" placeholder="Disney Latino " onblur="campoRequerido(this)" required>
+                    <input type="text " class="form-control" id="contactoNombre" placeholder="Disney Latino " onblur="campoRequerido(this)" required>
                     <div class="valid-feedback">
                         Campo completo
                     </div>
@@ -105,8 +111,8 @@
                     </div>
                 </div>
                 <div class="my-3 text-light ">
-                    <label for="exampleFormControlInput1 " class="form-label ">Dirección de email</label>
-                    <input type="email " class="form-control " id="exampleFormControlInput1 " placeholder="disneyplus@disneyplus.com" onblur="contactoEmail(this)" required>
+                    <label for="exampleFormControlInput1" class="form-label">Dirección de email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="disneyplus@disneyplus.com" onblur="contactoEmail(this)" required>
                     <div class="valid-feedback">
                         Campo completo
                     </div>
@@ -116,7 +122,7 @@
                 </div>
                 <div class="my-3 text-light ">
                     <label for="exampleFormControlNumber " class="form-label ">Teléfono</label>
-                    <input type="number " class="form-control " id="exampleFormControlNumber " placeholder="381 123 456 " onblur="contactoNumeros(this)" required>
+                    <input type="number " class="form-control " id="contactoNumero" placeholder="381 123 456 " onblur="contactoNumeros(this)" required>
                     <div class="valid-feedback">
                         Campo completo
                     </div>
@@ -126,7 +132,7 @@
                 </div>
                 <div class="my-3 text-light ">
                     <label for="exampleFormControlTextarea1 " class="form-label ">Escríbanos su mensaje</label>
-                    <textarea class="form-control " id="exampleFormControlTextarea1 " rows="3 " placeholder="Deje aquí su mensaje, consulta o comentario. " onblur="contactoComentarios(this)" required></textarea>
+                    <textarea class="form-control " id="exampleFormControlTextarea1" rows="3 " placeholder="Deje aquí su mensaje, consulta o comentario. " onblur="contactoComentarios(this)" required></textarea>
                     <div class="valid-feedback">
                         Campo completo
                     </div>
@@ -137,7 +143,7 @@
                 <div class="my-5 text-light text-center">
                     <p>Al enviar tu mensaje aceptas nuestros <a href="error404.html "> términos y condiciones</a></p>
                 </div>
-                <button type="submit" class="btn btn-light btn-lg col-12 my-3 ">Submit</button>
+                <button type="submit" class="btn btn-light btn-lg col-12 my-3">Enviar mensaje</button>
             </form>
         </section>
     </main>
