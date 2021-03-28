@@ -116,16 +116,17 @@ function valGeneral(event) {
 
 // VALIDACIONES DE REGISTRO DE PELICULAS
 //Validacion del codigo 
-/*
+
 function valCodigo(input) {
-    if (input.value.trim() === "") {
-        input.className = 'form-control is-invalid';
-        return false;
-    } else {
+    if (input.value != "" && !isNaN(input.value)) {
         input.className = 'form-control is-valid';
         return true;
+    } else {
+        input.className = 'form-control is-invalid';
+        return false;
     }
 }
+export { valCodigo }
 
 //Validacion del nombre 
 function valNombrePelicula(input) {
@@ -137,6 +138,7 @@ function valNombrePelicula(input) {
         return true;
     }
 }
+export { valNombrePelicula }
 
 //Validacion de la categoria 
 function valCategoria(input) {
@@ -148,6 +150,7 @@ function valCategoria(input) {
         return true;
     }
 }
+export { valCategoria }
 
 //Validacion de campo de descripcion 
 function valDescripcion(texto) {
@@ -159,7 +162,14 @@ function valDescripcion(texto) {
         return false;
     }
 }
+export { valDescripcion }
 
+export function contarCaracteres(input) {
+    let cantidad = document.getElementById('caracteres');
+    cantidad.innerHTML = `${input.value.length} caracteres`;
+}
+
+/*
 //Contador de caracteres (se agrega en el .html: (linea - 63) <p id="caracterNum">0 caracteres</p>)
 function contadorCaracteres(caracter) {
     document.getElementById("caracterNum").innerHTML = caracter.value.length + ' caracteres';

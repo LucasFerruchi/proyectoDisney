@@ -1,4 +1,35 @@
-import { Pelis } from './peliculasClass.js'
+import { Pelis } from './peliculasClass.js';
+import { valCodigo, valNombrePelicula, valCategoria, valDescripcion, contarCaracteres } from './validaciones.js'
+
+let validacionCodigo = document.getElementById("codigo");
+validacionCodigo.addEventListener("blur", function() {
+    valCodigo(validacionCodigo);
+    //console.log(validacionCodigo);
+})
+let validacionNombrePeli = document.getElementById("nombPeli")
+validacionNombrePeli.addEventListener("blur", function() {
+    valNombrePelicula(validacionNombrePeli);
+    //console.log(valNombrePelicula);
+})
+
+let validacionCategoria = document.getElementById("categoria")
+validacionCategoria.addEventListener("blur", function() {
+    valCategoria(validacionCategoria);
+    //console.log(valCategoria);
+})
+
+let validacionDescripcion = document.getElementById("descripcion")
+validacionDescripcion.addEventListener("blur", function() {
+    valDescripcion(validacionDescripcion);
+    //console.log(valCategoria);
+})
+
+//let cuentaDescripcion = document.getElementById("descripcion")
+validacionDescripcion.addEventListener("keypress", function() {
+    contarCaracteres(validacionDescripcion);
+    //console.log(valCategoria);
+})
+
 let listaPeliculas = [];
 const modalPeli = new bootstrap.Modal(document.getElementById('modalPeliculas'))
 let btnAgregar = document.getElementById("btnAgregar");
@@ -183,6 +214,7 @@ window.editarPelicula = function(boton) {
     document.getElementById('destacada').checked = peliEncontrada.destacada;
     //Cambio el estado de la Bandera
     modificarPeli = true;
+    console.log(modalPeli);
     //Mostrar la ventana modal
     modalPeli.show();
 }
