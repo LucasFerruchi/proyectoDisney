@@ -58,7 +58,7 @@ let checkTerminos = document.querySelector('#terminos');
 
 checkTerminos.addEventListener('change', function() {
     valCheckBox();
-})
+});
 
 
 function valCheckBox() {
@@ -103,6 +103,55 @@ function limpiarValidaciones() {
     document.querySelector('#telefono').className = "form-control"
     terminos.className = "form-check-input";
 }
+
+// LOG-IN
+
+function valPassword(input) {
+    console.log('funcion valPassword');
+    if (input.value.length < 6) {
+        input.className = 'form-control is-invalid';
+        return false;
+    } else {
+        input.className = 'form-control is-valid';
+        return true;
+    }
+}
+
+function valGeneralLogin(event) {
+    event.preventDefault();
+    console.log('desde la funcion valGeneralLogin');
+
+    if (valEmail(document.getElementById('emailLogin')) &&
+        valPassword(document.getElementById('password'))) {
+
+        console.log(document.getElementById('emailLogin').value);
+
+        if (document.getElementById('emailLogin').value === "administrador@gmail.com") {
+            console.log('desde administrador');
+            window.location.href = "admin.html"
+        } else {
+            console.log('no valido el mail de administrador@gmail.com');
+            //Limpiar validaciones 
+            document.querySelector('#emailLogin').className = "form-control";
+            document.querySelector('#password').className = "form-control";
+
+
+            //Limpiar formulario
+            document.getElementById('loginForm').reset();
+        }
+
+
+
+
+
+    } else {
+        alert('debe corregir los datos cargados')
+    }
+}
+
+
+
+
 
 // VALIDACIONES DE REGISTRO DE PELICULAS
 //Validacion del codigo 
