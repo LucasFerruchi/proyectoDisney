@@ -1,28 +1,3 @@
-// VALIDACIONES DE LOGIN
-//Validacion de email
-// function valEmail(email) {
-// let expresion = /\w+@\w+\.[a-z]{2,}$/;
-// if (email.value.trim() != '' && expresion.test(email.value)) {
-// email.className = 'form-control is-valid';
-// return true;
-// } else {
-// email.className = 'form-control is-invalid';
-// return false;
-// }
-// }
-
-// Validacion de contraseña
-// function valContrasena(texto) {
-// if (texto.value.trim() != "" && texto.value.length >= 6) {
-// texto.className = 'form-control is-valid';
-// return true;
-// } else {
-// texto.className = 'form-control is-invalid';
-// return false;
-// }
-// }
-
-
 // VALIDACION DE FORMULARIO DE SUSCRIPCION
 
 
@@ -99,20 +74,36 @@ function valCheckBox() {
 
 //Validacion general del formulario suscrpcion completo luego de validar campo por campo
 function valGeneral(event) {
-    // window.valGeneral = function(event) {
-
     event.preventDefault();
     console.log('desde la funcion validar general');
     if (valSuscrpNombre(document.getElementById('nombre')) === true &&
         valSuscrpApellido(document.getElementById('apellido')) === true &&
         valEmail(document.getElementById('email')) &&
         valiNumTel(document.getElementById('telefono')) &&
-        valCheckBox()) {} else {
-        // indicar el error
+        valCheckBox()) {
+        //Limpiar validaciones 
+        limpiarValidaciones();
+        //Limpiar formulario
+        limpiarFormulario();
+
+
+    } else {
         alert('debe corregir los datos cargados')
     }
 }
 
+function limpiarFormulario() {
+    document.getElementById('formSuscripcion').reset();
+    modificarFunkopop = false;
+}
+
+function limpiarValidaciones() {
+    document.querySelector('#nombre').className = "form-control";
+    document.querySelector('#apellido').className = "form-control";
+    document.querySelector('#email').className = "form-control";
+    document.querySelector('#telefono').className = "form-control"
+    terminos.className = "form-check-input";
+}
 
 // VALIDACIONES DE REGISTRO DE PELICULAS
 //Validacion del codigo 
