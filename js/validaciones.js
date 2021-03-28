@@ -1,28 +1,3 @@
-// VALIDACIONES DE LOGIN
-//Validacion de email
-// function valEmail(email) {
-// let expresion = /\w+@\w+\.[a-z]{2,}$/;
-// if (email.value.trim() != '' && expresion.test(email.value)) {
-// email.className = 'form-control is-valid';
-// return true;
-// } else {
-// email.className = 'form-control is-invalid';
-// return false;
-// }
-// }
-
-// Validacion de contraseña
-// function valContrasena(texto) {
-// if (texto.value.trim() != "" && texto.value.length >= 6) {
-// texto.className = 'form-control is-valid';
-// return true;
-// } else {
-// texto.className = 'form-control is-invalid';
-// return false;
-// }
-// }
-
-
 // VALIDACION DE FORMULARIO DE SUSCRIPCION
 
 
@@ -83,7 +58,7 @@ let checkTerminos = document.querySelector('#terminos');
 
 checkTerminos.addEventListener('change', function() {
     valCheckBox();
-})
+});
 
 
 function valCheckBox() {
@@ -99,19 +74,84 @@ function valCheckBox() {
 
 //Validacion general del formulario suscrpcion completo luego de validar campo por campo
 function valGeneral(event) {
-    // window.valGeneral = function(event) {
-
     event.preventDefault();
     console.log('desde la funcion validar general');
     if (valSuscrpNombre(document.getElementById('nombre')) === true &&
         valSuscrpApellido(document.getElementById('apellido')) === true &&
         valEmail(document.getElementById('email')) &&
         valiNumTel(document.getElementById('telefono')) &&
-        valCheckBox()) {} else {
-        // indicar el error
+        valCheckBox()) {
+        //Limpiar validaciones 
+        limpiarValidaciones();
+        //Limpiar formulario
+        limpiarFormulario();
+
+
+    } else {
         alert('debe corregir los datos cargados')
     }
 }
+
+function limpiarFormulario() {
+    document.getElementById('formSuscripcion').reset();
+    modificarFunkopop = false;
+}
+
+function limpiarValidaciones() {
+    document.querySelector('#nombre').className = "form-control";
+    document.querySelector('#apellido').className = "form-control";
+    document.querySelector('#email').className = "form-control";
+    document.querySelector('#telefono').className = "form-control"
+    terminos.className = "form-check-input";
+}
+
+// LOG-IN
+
+function valPassword(input) {
+    console.log('funcion valPassword');
+    if (input.value.length < 6) {
+        input.className = 'form-control is-invalid';
+        return false;
+    } else {
+        input.className = 'form-control is-valid';
+        return true;
+    }
+}
+
+function valGeneralLogin(event) {
+    event.preventDefault();
+    console.log('desde la funcion valGeneralLogin');
+
+    if (valEmail(document.getElementById('emailLogin')) &&
+        valPassword(document.getElementById('password'))) {
+
+        console.log(document.getElementById('emailLogin').value);
+
+        if (document.getElementById('emailLogin').value === "administrador@gmail.com") {
+            console.log('desde administrador');
+            window.location.href = "admin.html"
+        } else {
+            console.log('no valido el mail de administrador@gmail.com');
+            //Limpiar validaciones 
+            document.querySelector('#emailLogin').className = "form-control";
+            document.querySelector('#password').className = "form-control";
+
+
+            //Limpiar formulario
+            document.getElementById('loginForm').reset();
+        }
+
+
+
+
+
+    } else {
+        alert('debe corregir los datos cargados')
+    }
+}
+
+
+
 
 
 // VALIDACIONES DE REGISTRO DE PELICULAS
