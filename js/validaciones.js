@@ -94,7 +94,6 @@ function valGeneral(event) {
 
 function limpiarFormulario() {
     document.getElementById('formSuscripcion').reset();
-    modificarFunkopop = false;
 }
 
 function limpiarValidaciones() {
