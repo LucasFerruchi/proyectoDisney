@@ -1,4 +1,35 @@
-import { Pelis } from './peliculasClass.js'
+import { Pelis } from './peliculasClass.js';
+import { valCodigo, valNombrePelicula, valCategoria, valDescripcion, contarCaracteres, limpiarValidacionesAdmin } from './validacionesAdmin.js'
+
+let validacionCodigo = document.getElementById("codigo");
+validacionCodigo.addEventListener("blur", function() {
+    valCodigo(validacionCodigo);
+    //console.log(validacionCodigo);
+})
+let validacionNombrePeli = document.getElementById("nombPeli")
+validacionNombrePeli.addEventListener("blur", function() {
+    valNombrePelicula(validacionNombrePeli);
+    //console.log(valNombrePelicula);
+})
+
+let validacionCategoria = document.getElementById("categoria")
+validacionCategoria.addEventListener("blur", function() {
+    valCategoria(validacionCategoria);
+    //console.log(valCategoria);
+})
+
+let validacionDescripcion = document.getElementById("descripcion")
+validacionDescripcion.addEventListener("blur", function() {
+    valDescripcion(validacionDescripcion);
+    //console.log(valCategoria);
+})
+
+//let cuentaDescripcion = document.getElementById("descripcion")
+validacionDescripcion.addEventListener("keypress", function() {
+    contarCaracteres(validacionDescripcion);
+    //console.log(valCategoria);
+})
+
 let listaPeliculas = [];
 const modalPeli = new bootstrap.Modal(document.getElementById('modalPeliculas'))
 let btnAgregar = document.getElementById("btnAgregar");
@@ -41,6 +72,7 @@ function agregarPelicula() {
 //Limpiar formulario
 function limpiarFormulario() {
     modificarPeli = false;
+    limpiarValidacionesAdmin();
     document.getElementById("formPeli").reset();
 }
 
@@ -170,6 +202,7 @@ window.eliminarPelicula = function(boton) {
 //Función para editar película
 window.editarPelicula = function(boton) {
     console.log("Holis editarPelicula");
+    limpiarValidacionesAdmin();
     //busco la pelicula que quiero (solo el primero)
     let peliEncontrada = listaPeliculas.find((peli) => { return peli.codigo === boton.id })
         //console.log(peliEncontrada);
@@ -183,6 +216,7 @@ window.editarPelicula = function(boton) {
     document.getElementById('destacada').checked = peliEncontrada.destacada;
     //Cambio el estado de la Bandera
     modificarPeli = true;
+    console.log(modalPeli);
     //Mostrar la ventana modal
     modalPeli.show();
 }
@@ -191,13 +225,21 @@ window.editarPelicula = function(boton) {
 window.guardarPelicula = function(event) {
     event.preventDefault();
     console.log("Desde guardarPelicula");
-    if (modificarPeli) {
-        //Modifico la Peli
-        console.log("Aqui debemos modificar la pelicula")
-        modificarPeliculaExistente();
+    if (valCodigo(validacionCodigo) && valCategoria(validacionCategoria) && valNombrePelicula(validacionNombrePeli) && valDescripcion(validacionDescripcion)) {
+        if (modificarPeli) {
+            //Modifico la Peli
+            console.log("Aqui debemos modificar la pelicula")
+            modificarPeliculaExistente();
+        } else {
+            //Agrego una Peli nueva
+            agregarPelicula();
+        }
     } else {
-        //Agrego una Peli nueva
-        agregarPelicula();
+        Swal.fire(
+            'Oopssss...',
+            'Ingrese los datos completos',
+            'error'
+        );
     }
 }
 

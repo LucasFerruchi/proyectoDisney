@@ -152,28 +152,24 @@
                         <!-- Codigo -->
                         <div class="mb-3">
                             <label for="form-label">Código</label>
-                            <input type="text" class="form-control" id="codigo" placeholder="Ingrese un código para la película">
-                            <!-- <input type="text" class="form-control" id="codigo" placeholder="Ingrese un código para la película" onblur="valCodigo(this)" required> -->
+                            <input type="number" class="form-control" id="codigo" placeholder="Ingrese un código para la película(solo números)." required>
                         </div>
                         <!-- nombPeli -->
                         <div class="mb-3">
                             <label for="form-label">Nombre de Película:</label>
-                            <input type="text" class="form-control" id="nombPeli" placeholder="Ingrese el nombre para la película">
-                            <!-- onblur="valNombrePelicula(this)" required> -->
+                            <input type="text" class="form-control" id="nombPeli" placeholder="Ingrese el nombre para la película" required>
                         </div>
                         <!-- categoria -->
                         <div class="mb-3">
                             <label for="form-label">Categoría:</label>
-                            <input type="text" class="form-control" id="categoria" placeholder="Categoria de película.">
-                            <!-- onblur="valCategoria(this)" required> -->
+                            <input type="text" class="form-control" id="categoria" placeholder="Películas/Series/Cortos/Animadas/Acción" required>
                         </div>
                         <!-- descripcion -->
                         <div class="mb-3">
                             <label for="form-label">Descripción:</label>
-                            <textarea type="text" class="form-control" id="descripcion" placeholder="Descripción de la película. Debe contar con mas de 30 caracteres."></textarea>
-                            <!--onblur="valDescripcion(this)" onkeypress="contadorCaracteres (this)" required> -->
+                            <textarea type="text" class="form-control" id="descripcion" placeholder="Descripción de la película. Debe contar con mas de 30 caracteres." required></textarea>
                             <div>
-                                <p id="caracterNum">0 caracteres</p>
+                                <p id="caracteres">0 caracteres</p>
                             </div>
                             <div class="invalid-feedback">
                                 Debe ingresar una descripcion de almenos 30 caracteres
@@ -280,7 +276,7 @@
 
     <footer class="text-light py-2 ">
         <section class="container d-flex justify-content-between ">
-            <article class="row ">
+            <article class="row">
                 <div class="col-sm-12 col-md-4 text-center mt-5 mb-2 ">
                     <ul class="lista ">
                         <li>
@@ -319,6 +315,7 @@
     <!-- <script src="js/filaPeliculas.js "></script> -->
     <!-- <script src="js/validaciones.js"></script> -->
     <script type="module" src="js/admin.js"></script>
+
 </body>
 
 </html>
