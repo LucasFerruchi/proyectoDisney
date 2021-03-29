@@ -248,7 +248,7 @@ function modificarPeliculaExistente() {
     //busco el objeto y modifico - recorro el arreglo
     for (let i in listaPeliculas) {
         if (listaPeliculas[i].codigo === codigo) {
-            listaPeliculas[i].nombrePeli = nombre;
+            listaPeliculas[i].nombre = nombre;
             listaPeliculas[i].categoria = categoria;
             listaPeliculas[i].descripcion = descripcion;
             listaPeliculas[i].imagen = imagen;
