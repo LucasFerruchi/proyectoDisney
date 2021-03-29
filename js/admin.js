@@ -53,11 +53,14 @@ function agregarPelicula() {
     let imagen = document.getElementById("imagen").value;
     let publicada = document.getElementById("publicada").checked;
     let destacada = document.getElementById("destacada").checked;
-
+    let prueba = [];
     let nuevaPelicula = new Pelis(codigo, nombrePeli, categoria, descripcion, imagen, publicada, destacada);
-    listaPeliculas.push(nuevaPelicula);
+    console.log(nuevaPelicula);
     //console.log(listaPeliculas);
-
+    prueba.push(nuevaPelicula);
+    //listaPeliculas.push(nuevaPelicula);
+    listaPeliculas = prueba;
+    //console.log(prueba);
     localStorage.setItem('listaPeliculasKey', JSON.stringify(listaPeliculas));
     limpiarFormulario();
     // Ventana de SweetAlert2
