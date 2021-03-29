@@ -57,6 +57,7 @@ function leerPeliculas() {
     }
 }
 leerCategoriaPeliculas();
+leerCategoriaSeries();
 
 function leerCategoriaPeliculas() {
     if (localStorage.length > 0) {
@@ -66,7 +67,6 @@ function leerCategoriaPeliculas() {
             return (peli.categoria === 'Películas')
         });
         if (categoriaPeliculas.length === 0) {
-
             console.log("NO HAY PELICULAS DE CATEGORIA PELICULAS")
         } else {
             console.log("HAY PELICULAS DE CATEGORIA PELICULAS")
