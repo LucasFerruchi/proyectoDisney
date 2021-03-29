@@ -19,6 +19,7 @@
 // listaPeliculasKey
 //Proyecto Disney Implementación
 let listaPeliculas = [];
+//  Muestra todas las peliculas cargadas como lista de cards
 leerPeliculas();
 
 function leerPeliculas() {

@@ -53,14 +53,11 @@ function agregarPelicula() {
     let imagen = document.getElementById("imagen").value;
     let publicada = document.getElementById("publicada").checked;
     let destacada = document.getElementById("destacada").checked;
-    let prueba = [];
+
     let nuevaPelicula = new Pelis(codigo, nombrePeli, categoria, descripcion, imagen, publicada, destacada);
-    console.log(nuevaPelicula);
+    listaPeliculas.push(nuevaPelicula);
     //console.log(listaPeliculas);
-    prueba.push(nuevaPelicula);
-    //listaPeliculas.push(nuevaPelicula);
-    listaPeliculas = prueba;
-    //console.log(prueba);
+
     localStorage.setItem('listaPeliculasKey', JSON.stringify(listaPeliculas));
     limpiarFormulario();
     // Ventana de SweetAlert2
@@ -205,7 +202,6 @@ window.eliminarPelicula = function(boton) {
 //Función para editar película
 window.editarPelicula = function(boton) {
     console.log("Holis editarPelicula");
-    limpiarValidacionesAdmin();
     //busco la pelicula que quiero (solo el primero)
     let peliEncontrada = listaPeliculas.find((peli) => { return peli.codigo === boton.id })
         //console.log(peliEncontrada);
@@ -228,21 +224,13 @@ window.editarPelicula = function(boton) {
 window.guardarPelicula = function(event) {
     event.preventDefault();
     console.log("Desde guardarPelicula");
-    if (valCodigo(validacionCodigo) && valCategoria(validacionCategoria) && valNombrePelicula(validacionNombrePeli) && valDescripcion(validacionDescripcion)) {
-        if (modificarPeli) {
-            //Modifico la Peli
-            console.log("Aqui debemos modificar la pelicula")
-            modificarPeliculaExistente();
-        } else {
-            //Agrego una Peli nueva
-            agregarPelicula();
-        }
+    if (modificarPeli) {
+        //Modifico la Peli
+        console.log("Aqui debemos modificar la pelicula")
+        modificarPeliculaExistente();
     } else {
-        Swal.fire(
-            'Oopssss...',
-            'Ingrese los datos completos',
-            'error'
-        );
+        //Agrego una Peli nueva
+        agregarPelicula();
     }
 }
 
