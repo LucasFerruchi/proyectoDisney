@@ -56,3 +56,41 @@ function leerPeliculas() {
         }
     }
 }
+leerCategoriaPeliculas();
+
+function leerCategoriaPeliculas() {
+    if (localStorage.length > 0) {
+        listaPeliculas = JSON.parse(localStorage.getItem("listaPeliculasKey"));
+        console.log(listaPeliculas);
+        let categoriaPeliculas = listaPeliculas.filter(function(peli) {
+            return (peli.categoria === 'Películas')
+        });
+        if (categoriaPeliculas.length === 0) {
+
+            console.log("NO HAY PELICULAS DE CATEGORIA PELICULAS")
+        } else {
+            console.log("HAY PELICULAS DE CATEGORIA PELICULAS")
+            console.log(categoriaPeliculas.length);
+            dibujarSlider(categoriaPeliculas);
+        }
+
+    }
+}
+
+function dibujarSlider(categoriaPeliculas) {
+    let carruselImagenes = document.getElementById("slideImagenes");
+    carruselImagenes.innerHTML = "";
+    let imagenes;
+    let imagen = "SinImagen_01.png";
+    for (let i in categoriaPeliculas) {
+        if (listaPeliculas[i].imagen === "") {
+            //Cargo una imagen por defecto
+        } else {
+            imagen = listaPeliculas[i].imagen;
+        }
+        imagenes = `<div class="pelicula">
+                <a href="#"><img src="img/imgBase/${imagen}" alt=""></a>
+                </div>`;
+        carruselImagenes.innerHTML += imagenes;
+    }
+}
