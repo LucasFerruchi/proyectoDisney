@@ -17,44 +17,41 @@
 // let listaPeliculas 
 
 // listaPeliculasKey
-
+//Proyecto Disney Implementación
 let listaPeliculas = [];
 leerPeliculas();
 
 function leerPeliculas() {
     if (localStorage.length > 0) {
         listaPeliculas = JSON.parse(localStorage.getItem("listaPeliculasKey"));
+        console.log(listaPeliculas);
+        //Limpio el index
+        let filaCards = document.getElementById("filaPeliculasCards");
+        filaPeliculasCards.innerHTML = "";
 
-        //borrar los datos de las filas de cards
-        let filaCards = document.getElementById("filaCards");
-        filaCards.innerHTML = "";
-
-        //Dibujar cada columna con los datos del producto
+        //Dibujar columnas con las Pelis
         for (let i in listaPeliculas) {
-            //cargar imagen por defecto en casa de que no este disponible
-            let imagen = "";
+            //Imagenes por defecto
+            let imagen = "SinImagen_01.png"
             if (listaPeliculas[i].imagen === "") {
-                //cargar imagen por defecto
-                imagen = "752797.png";
+                //Cargo una imagen por defecto
             } else {
-                //Usar la imagen solicitada por usuario
                 imagen = listaPeliculas[i].imagen;
             }
-
-
-            let columna = `<div class="col-md-3 col-sm-6 my-2">
-            <div class="card w-100 shadow">
-                <img src="img/productos/${imagen}" class="card-img-top" alt="Funko ${listaPeliculas[i].nombre}">
+            //Armo las columnas
+            let columna = `
+            <div class="col-md-3 col-sm-6 my-2">
+                <div class="card w-100 bg-light text-dark">
+                <img src="img/imgBase/${imagen}" class="card-img-top" alt="Película ${listaPeliculas[i].nombre}">
                 <div class="card-body">
                     <h5 class="card-title">${listaPeliculas[i].nombre}</h5>
                     <p class="card-text">${listaPeliculas[i].descripcion}</p>
-                    <a href="#" class="btn btn-primary disabled">Ver más</a>
+                    <a href="#" class="btn btn-primary disabled">Ver mas</a>
                 </div>
-            </div>
-        </div>`;
-
-            //agregar los pedidos a la tabla inicio (en el elemento padre)
-            filaCards.innerHTML += columna;
+                </div>
+                </div>`;
+            //Agregamos la columna al elmento padre 
+            filaPeliculasCards.innerHTML += columna;
         }
     }
 }
